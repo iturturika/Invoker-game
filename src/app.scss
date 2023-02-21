@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Roboto-Slab';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #141313;
+    color: #fff;
+    font-family: Roboto-Slab;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+
+.App {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100vh;
+    
+}
+
+
+
+.controll__list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 50px;
+    list-style: none;
+    align-items: center;
+    img{
+        width: 70px;
+        
+    }
+    li{ 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    p{  
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+        font-size: 18px;
+        
+    }
+}
+
+.spell__list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style: none;
+    img{
+        width: 50px;    
+    }
+    li{ 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    p{  
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+        font-size: 15px;
+        
+    }
+}
+
+.controlls {
+    margin: auto;
+    padding: 15px;
+    width: 300px;
+    height: 750px;
+    border-radius:  20px;
+    background-color: #141313;
+    -webkit-border-radius:  20px;
+    -moz-border-radius:  20px;
+    -ms-border-radius:  20px;
+    -o-border-radius:  20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        h2{
+            text-align: center;
+        }
+    
+
+}
