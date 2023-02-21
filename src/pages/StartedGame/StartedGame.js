@@ -9,8 +9,11 @@ import invoke from '../../img/invoker_invoke.png';
 import nospell from '../../img/no_spell.png';
 
 import { restartGame } from '../../actions/restartGame';
-
+import { handleKeyClick } from '../../actions/handleKeyClick';
 const StartedGame = (props) => {
+  React.useEffect(() => {
+    handleKeyClick();
+  });
   return (
      <div className='mainSection'>
         <h1>Invoker Game by undefined</h1>
