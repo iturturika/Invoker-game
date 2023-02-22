@@ -24,6 +24,9 @@ import deafening_blast from './img/invoker_deafening_blast.png';
 
 function App() {
 const [gameState, setGameState] = React.useState('Waiting');
+const [thirdCircle, setThirdCircle] = React.useState('');
+const [update, setUpdate] = React.useState(0);
+
   return (
     <div className="App">
       <div className='controlls'>
@@ -37,8 +40,8 @@ const [gameState, setGameState] = React.useState('Waiting');
           <li><img src={invoke} alt="invoke"></img><p>R - Invoke</p></li>
         </ul>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Finished' ? <FinishedGame/> : null}
       <div className='spells'>
         <h2>Spells</h2>
