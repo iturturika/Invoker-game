@@ -8,7 +8,7 @@ import './app.scss';
 import quas from './img/invoker_quas.png';
 import wex from './img/invoker_wex.png';
 import exort from './img/invoker_exort.png';
-import invoke from './img/invoker_invoke.png';
+import invokeImg from './img/invoker_invoke.png';
 import nospell from './img/no_spell.png';
 
 import cold_snap from './img/invoker_cold_snap.png';
@@ -24,9 +24,12 @@ import deafening_blast from './img/invoker_deafening_blast.png';
 
 function App() {
 const [gameState, setGameState] = React.useState('Waiting');
+const [firstCircle, setFirstCircle] = React.useState('');
+const [secondCircle, setSecondCircle] = React.useState('');
 const [thirdCircle, setThirdCircle] = React.useState('');
+const [spell1, setSpell1] = React.useState('');
+const [spell2, setSpell2] = React.useState('');
 const [update, setUpdate] = React.useState(0);
-
   return (
     <div className="App">
       <div className='controlls'>
@@ -37,11 +40,11 @@ const [update, setUpdate] = React.useState(0);
           <li><img src={exort} alt="exort"></img><p>E - Exort</p></li>
           <li><img src={nospell} alt="spell1"></img><p>D - Spell 1 </p></li>
           <li><img src={nospell} alt="spell2"></img><p>F - Spell 2 </p></li>
-          <li><img src={invoke} alt="invoke"></img><p>R - Invoke</p></li>
+          <li><img src={invokeImg} alt="invoke"></img><p>R - Invoke</p></li>
         </ul>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Finished' ? <FinishedGame/> : null}
       <div className='spells'>
         <h2>Spells</h2>
