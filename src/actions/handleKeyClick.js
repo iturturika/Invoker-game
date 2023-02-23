@@ -70,7 +70,7 @@ export const handleKeyClick = (setSpell1, setSpell2, firstCircle, secondCircle, 
                 setSpell2(prevSpell);
                 prevSpell = chaos_meteor;
             }
-            if(spell === 'qwe' || spell === 'ewq'){
+            if(spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq'){
                 setSpell1(deafening_blast);
                 setSpell2(prevSpell);
                 prevSpell = deafening_blast;
