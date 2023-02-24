@@ -32,8 +32,8 @@
             font-weight: 700;
             width: 200px;
             height: 50px;
-            background-color: #B24C6B;
-            border: none;
+            background-color: #440b29;
+            border: 2px solid #bd925e;
             border-radius: 20px;
             -webkit-border-radius: 20px;
             -moz-border-radius: 20px;
@@ -62,7 +62,10 @@
             }
         }
 }
-
+.button_onClick{
+    transition: 200ms ease-in-out;
+    transform: scale(0.96);
+}
 
 .spells__group{
     display: flex;

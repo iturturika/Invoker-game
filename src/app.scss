@@ -1,16 +1,15 @@
 @font-face {
-    font-family: 'Roboto-Slab';
-    src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-}
-
+    font-family: TrajanPro; /* Гарнитура шрифта */
+    src: url('../public/fonts/TrajanPro-Bold.otf'); /* Путь к файлу со шрифтом */
+   }
 *{
     margin: 0;
     padding: 0;
     background-color: #141313;
     color: #fff;
-    font-family: Roboto-Slab;
-    font-weight: 400;
     box-sizing: border-box;
+    font-family: TrajanPro, serif;
+    font-weight: 400;
 }
 
 
