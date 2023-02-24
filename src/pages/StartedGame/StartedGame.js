@@ -7,14 +7,13 @@ import exort from '../../img/invoker_exort.png';
 import invoke from '../../img/invoker_invoke.png';
 import nospell from '../../img/no_spell.png';
 
-
 import { restartGame } from '../../actions/restartGame';
 const StartedGame = (props) => {
   return (
      <div className='mainSection'>
         <h1>Invoker Game by undefined</h1>
         <img src={invoker} alt='invoker' className='img'></img>
-        <div className='curent__spell'><img src={quas} alt="quas"></img><p>Forge Spirit</p></div>
+        <div className='curent__spell'><img src={props.randomSpell} alt="randomSpell"></img><p>Forge Spirit</p></div>
         <button className='restart' onClick={() => {restartGame(props.setGameState)}}>Restart</button>
         <ul className='window'>
           <li className='circle'>

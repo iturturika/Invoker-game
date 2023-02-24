@@ -9,13 +9,13 @@ import forge_spirit from '../img/invoker_forge_spirit.png';
 import chaos_meteor from '../img/invoker_chaos_meteor.png';
 import deafening_blast from '../img/invoker_deafening_blast.png';
 import nospell from '../img/no_spell.png';
-export const handleKeyClick = (spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
+import { randomSpell } from './randomSpell';
+export const handleKeyClick = (setGameState, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
     let a, b, c, prevB, prevC, spell;
     let prevSpell = '';
     document.addEventListener('keydown', function (event) {
         if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
             setThirdCircle(event.key);   
-            setUpdate(update++);
             c = event.key;
             b = prevC;
             secondCircle(b);
@@ -79,6 +79,11 @@ export const handleKeyClick = (spell1, spell2, setSpell1, setSpell2, firstCircle
                 setSpell1(nospell);
                 setSpell2(prevSpell);
                 prevSpell = nospell;
+            }
+            randomSpell(setRandomSpell);
+            setUpdate(update++);
+            if(update > 8){
+                setGameState('Finished');
             }
         }});
 }
