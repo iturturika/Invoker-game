@@ -30,6 +30,7 @@ const [thirdCircle, setThirdCircle] = React.useState('');
 const [spell1, setSpell1] = React.useState('');
 const [spell2, setSpell2] = React.useState('');
 const [update, setUpdate] = React.useState(0);
+const [randomSpell, setRandomSpell] = React.useState('');
   return (
     <div className="App">
       <div className='controlls'>
@@ -43,8 +44,8 @@ const [update, setUpdate] = React.useState(0);
           <li><img src={invokeImg} alt="invoke"></img><p>R - Invoke</p></li>
         </ul>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} randomSpell={randomSpell} setRandomSpell={setRandomSpell} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} randomSpell={randomSpell} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Finished' ? <FinishedGame/> : null}
       <div className='spells'>
         <h2>Spells</h2>
