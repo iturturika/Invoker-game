@@ -21,7 +21,6 @@ import deafening_blast from '../../img/invoker_deafening_blast.png';
 
 import { restartGame } from '../../actions/restartGame';
 const StartedGame = (props) => {
-
   return (
      <div className='mainSection'>
         <h1>Invoker Game by undefined</h1>
@@ -70,9 +69,31 @@ const StartedGame = (props) => {
           <li className='square'><img src={wex} alt="wex"></img><span>W</span></li>
           <li className='square'><img src={exort} alt="exort"></img><span>E</span></li>
           <li className='square'>
-            <img src={props.spell1 ? props.spell1 : nospell} alt="spell1"></img>
+            {props.spell1 === 'cold snap' ? <img src={cold_snap} alt="spell2"></img> : null}
+            {props.spell1 === 'ghost walk' ? <img src={ghost_walk} alt="spell2"></img> : null}
+            {props.spell1 === 'ice wall' ? <img src={ice_wall} alt="spell2"></img> : null}
+            {props.spell1 === 'emp' ? <img src={emp} alt="spell2"></img> : null}
+            {props.spell1 === 'tornado' ? <img src={tornado} alt="spell2"></img> : null}
+            {props.spell1 === 'alacrity' ? <img src={alacrity} alt="spell2"></img> : null}
+            {props.spell1 === 'sun strike' ? <img src={sun_strike} alt="spell2"></img> : null}
+            {props.spell1 === 'forge spirit' ? <img src={forge_spirit} alt="spell2"></img> : null}
+            {props.spell1 === 'chaos meteor' ? <img src={chaos_meteor} alt="spell2"></img> : null}
+            {props.spell1 === 'deafening blast' ? <img src={deafening_blast} alt="spell2"></img> : null}
+            {props.spell1 === 'nospell' ? <img src={nospell} alt="spell2"></img> : null}
           <span>D</span></li>
-          <li className='square'><img src={props.spell2 ? props.spell2 : nospell} alt="spell2"></img><span>F</span></li>
+          <li className='square'>
+            {props.spell2 === 'cold snap' ? <img src={cold_snap} alt="spell2"></img> : null}
+            {props.spell2 === 'ghost walk' ? <img src={ghost_walk} alt="spell2"></img> : null}
+            {props.spell2 === 'ice wall' ? <img src={ice_wall} alt="spell2"></img> : null}
+            {props.spell2 === 'emp' ? <img src={emp} alt="spell2"></img> : null}
+            {props.spell2 === 'tornado' ? <img src={tornado} alt="spell2"></img> : null}
+            {props.spell2 === 'alacrity' ? <img src={alacrity} alt="spell2"></img> : null}
+            {props.spell2 === 'sun strike' ? <img src={sun_strike} alt="spell2"></img> : null}
+            {props.spell2 === 'forge spirit' ? <img src={forge_spirit} alt="spell2"></img> : null}
+            {props.spell2 === 'chaos meteor' ? <img src={chaos_meteor} alt="spell2"></img> : null}
+            {props.spell2 === 'deafening blast' ? <img src={deafening_blast} alt="spell2"></img> : null}
+            {props.spell2 === 'nospell' ? <img src={nospell} alt="spell2"></img> : null}
+          <span>F</span></li>
           <li className='square'><img src={invoke} alt="invoke"></img><span>R</span></li>
         </ul>
       </div>

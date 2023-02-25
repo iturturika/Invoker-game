@@ -10,13 +10,14 @@ import nospell from '../../img/no_spell.png';
 
 import {startGame} from '../../actions/startGame.js';
 import { handleKeyClick } from '../../actions/handleKeyClick';
-import { randomSpell } from '../../actions/randomSpell';
 const PreviusGameState = (props) => {
+
+
   return (
      <div className='mainSection'>
         <h1>Invoker Game by kxrtik</h1>
         <img src={invoker} alt='invoker' className='img'></img>
-        <button className='button' onClick={() => {startGame(props.setGameState); randomSpell(props.setRandomSpell); handleKeyClick(props.setGameState, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);}}>Start Game</button>
+        <button className='button' onClick={() => {startGame(props.setGameState); handleKeyClick(props.setGameState, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);}}>Start Game</button>
         <ul className='window'>
           <li className='circle'></li>
           <li className='circle'></li>
