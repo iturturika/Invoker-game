@@ -1,11 +1,24 @@
 
 
-export const handleKeyClick = (setGameState, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
+export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
     let a, b, c, prevB, prevC, spell, generatedSpell;
     let prevSpell = '';
     const arr  = ["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"];
     generatedSpell = arr[Math.floor(Math.random() * arr.length)];
     setRandomSpell(generatedSpell);
+    const startTimer = () => {
+        let value = 0;
+          const timerI = setInterval(function(){
+            value = value + 1/60;
+          if(update > 9){
+            clearInterval(timerI);
+            setResultGame(value.toFixed(2));
+          }
+          }, 1000/60);
+    }
+        
+    startTimer();
+
     document.addEventListener('keydown', function (event) {
         if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
             setThirdCircle(event.key);   
@@ -86,7 +99,6 @@ export const handleKeyClick = (setGameState, setRandomSpell, spell1, spell2, set
                 setRandomSpell(generatedSpell);
                 setUpdate(update++);
             }
-            console.log(spell, generatedSpell);
         }});
 }
 

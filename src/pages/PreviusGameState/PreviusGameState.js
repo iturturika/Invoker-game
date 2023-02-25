@@ -17,7 +17,7 @@ const PreviusGameState = (props) => {
      <div className='mainSection'>
         <h1>Invoker Game by kxrtik</h1>
         <img src={invoker} alt='invoker' className='img'></img>
-        <button className='button' onClick={() => {startGame(props.setGameState); handleKeyClick(props.setGameState, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);}}>Start Game</button>
+        <button className='button' onClick={() => {startGame(props.setGameState); handleKeyClick(props.setGameState, props.setResultGame, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);}}>Start Game</button>
         <ul className='window'>
           <li className='circle'></li>
           <li className='circle'></li>
