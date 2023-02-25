@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Invoker-game/static/css/main.e6637523.css",
-    "main.js": "/Invoker-game/static/js/main.05aac0cd.js",
+    "main.js": "/Invoker-game/static/js/main.7d61d44e.js",
     "static/media/TrajanPro-Bold.otf": "/Invoker-game/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
     "static/media/invoker.jpg": "/Invoker-game/static/media/invoker.a2fc101bd300b5607b34.jpg",
     "static/media/invoker_exort.png": "/Invoker-game/static/media/invoker_exort.a56f53208bb284a9d01c.png",
@@ -11,10 +11,10 @@
     "static/media/no_spell.png": "/Invoker-game/static/media/no_spell.5ac56c73ca6cbf3b9ac0.png",
     "index.html": "/Invoker-game/index.html",
     "main.e6637523.css.map": "/Invoker-game/static/css/main.e6637523.css.map",
-    "main.05aac0cd.js.map": "/Invoker-game/static/js/main.05aac0cd.js.map"
+    "main.7d61d44e.js.map": "/Invoker-game/static/js/main.7d61d44e.js.map"
   },
   "entrypoints": [
     "static/css/main.e6637523.css",
-    "static/js/main.05aac0cd.js"
+    "static/js/main.7d61d44e.js"
   ]
 }
