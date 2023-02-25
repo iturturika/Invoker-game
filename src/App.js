@@ -23,16 +23,18 @@ import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
 
 function App() {
+
 const [gameState, setGameState] = React.useState('Waiting');
 const [firstCircle, setFirstCircle] = React.useState('');
 const [secondCircle, setSecondCircle] = React.useState('');
 const [thirdCircle, setThirdCircle] = React.useState('');
-const [spell1, setSpell1] = React.useState('');
-const [spell2, setSpell2] = React.useState('');
+const [spell1, setSpell1] = React.useState('nospell');
+const [spell2, setSpell2] = React.useState('nospell');
 const [update, setUpdate] = React.useState(0);
-const [randomSpell, setRandomSpell] = React.useState('');
-  return (
-    <div className="App">
+const [randomSpell, setRandomSpell] = React.useState();
+return (
+
+      <div className="App">
       <div className='controlls'>
         <h2>Controlls</h2>
         <ul className='controll__list'>
@@ -44,8 +46,8 @@ const [randomSpell, setRandomSpell] = React.useState('');
           <li><img src={invokeImg} alt="invoke"></img><p>R - Invoke</p></li>
         </ul>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} randomSpell={randomSpell} setRandomSpell={setRandomSpell} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} randomSpell={randomSpell} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState setGameState={setGameState} randomSpell={randomSpell} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Finished' ? <FinishedGame/> : null}
       <div className='spells'>
         <h2>Spells</h2>
@@ -63,6 +65,7 @@ const [randomSpell, setRandomSpell] = React.useState('');
         </ul>
       </div>
     </div>
+
   );
 }
 
