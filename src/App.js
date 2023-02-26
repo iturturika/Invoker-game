@@ -2,6 +2,8 @@ import React from 'react';
 import PreviusGameState from './pages/PreviusGameState/PreviusGameState.js';
 import StartedGame from './pages/StartedGame/StartedGame.js';
 import FinishedGame from './pages/FinishedGame/FinishedGame.js';
+import ReactGA from "react-ga4";
+
 
 import './app.scss';
 
@@ -23,7 +25,7 @@ import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
 
 function App() {
-
+ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
 const [firstCircle, setFirstCircle] = React.useState('');
 const [secondCircle, setSecondCircle] = React.useState('');
