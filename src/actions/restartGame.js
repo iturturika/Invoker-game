@@ -1,4 +1,4 @@
 export const restartGame = (setGameState, anonymFunction) => {
     setGameState("Waiting");
-    window.location.replace("https://iturturika.github.io/Invoker-game/");
+    window.location.replace("https://invoker-game.com");
 }
