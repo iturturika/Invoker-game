@@ -14,10 +14,8 @@
 
 
 .App {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 100vh;
-    
+    display: flex;
+    height: 100vh;
 }
 
 
@@ -28,7 +26,6 @@
     margin: 0 auto;
     margin-top: 50px;
     list-style: none;
-    align-items: center;
     img{
         width: 70px;
         
