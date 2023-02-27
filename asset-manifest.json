@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5928f3f3.css",
-    "main.js": "/static/js/main.b459c04a.js",
+    "main.css": "/static/css/main.3a19c892.css",
+    "main.js": "/static/js/main.3e42ad37.js",
     "static/media/TrajanPro-Bold.otf": "/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
     "static/media/invoker.jpg": "/static/media/invoker.a2fc101bd300b5607b34.jpg",
     "static/media/invoker_exort.png": "/static/media/invoker_exort.a56f53208bb284a9d01c.png",
@@ -10,11 +10,11 @@
     "static/media/invoker_quas.png": "/static/media/invoker_quas.5750837f318a07971a3f.png",
     "static/media/no_spell.png": "/static/media/no_spell.5ac56c73ca6cbf3b9ac0.png",
     "index.html": "/index.html",
-    "main.5928f3f3.css.map": "/static/css/main.5928f3f3.css.map",
-    "main.b459c04a.js.map": "/static/js/main.b459c04a.js.map"
+    "main.3a19c892.css.map": "/static/css/main.3a19c892.css.map",
+    "main.3e42ad37.js.map": "/static/js/main.3e42ad37.js.map"
   },
   "entrypoints": [
-    "static/css/main.5928f3f3.css",
-    "static/js/main.b459c04a.js"
+    "static/css/main.3a19c892.css",
+    "static/js/main.3e42ad37.js"
   ]
 }
