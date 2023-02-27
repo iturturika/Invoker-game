@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Invoker-game/static/css/main.25eb3e61.css",
-    "main.js": "/Invoker-game/static/js/main.8f09e202.js",
-    "static/media/TrajanPro-Bold.otf": "/Invoker-game/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
-    "static/media/invoker.jpg": "/Invoker-game/static/media/invoker.a2fc101bd300b5607b34.jpg",
-    "static/media/invoker_exort.png": "/Invoker-game/static/media/invoker_exort.a56f53208bb284a9d01c.png",
-    "static/media/invoker_invoke.png": "/Invoker-game/static/media/invoker_invoke.a06dc8565470549cac5f.png",
-    "static/media/invoker_wex.png": "/Invoker-game/static/media/invoker_wex.baabeddb7150b37f5752.png",
-    "static/media/invoker_quas.png": "/Invoker-game/static/media/invoker_quas.5750837f318a07971a3f.png",
-    "static/media/no_spell.png": "/Invoker-game/static/media/no_spell.5ac56c73ca6cbf3b9ac0.png",
-    "index.html": "/Invoker-game/index.html",
-    "main.25eb3e61.css.map": "/Invoker-game/static/css/main.25eb3e61.css.map",
-    "main.8f09e202.js.map": "/Invoker-game/static/js/main.8f09e202.js.map"
+    "main.css": "/static/css/main.5928f3f3.css",
+    "main.js": "/static/js/main.b459c04a.js",
+    "static/media/TrajanPro-Bold.otf": "/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
+    "static/media/invoker.jpg": "/static/media/invoker.a2fc101bd300b5607b34.jpg",
+    "static/media/invoker_exort.png": "/static/media/invoker_exort.a56f53208bb284a9d01c.png",
+    "static/media/invoker_invoke.png": "/static/media/invoker_invoke.a06dc8565470549cac5f.png",
+    "static/media/invoker_wex.png": "/static/media/invoker_wex.baabeddb7150b37f5752.png",
+    "static/media/invoker_quas.png": "/static/media/invoker_quas.5750837f318a07971a3f.png",
+    "static/media/no_spell.png": "/static/media/no_spell.5ac56c73ca6cbf3b9ac0.png",
+    "index.html": "/index.html",
+    "main.5928f3f3.css.map": "/static/css/main.5928f3f3.css.map",
+    "main.b459c04a.js.map": "/static/js/main.b459c04a.js.map"
   },
   "entrypoints": [
-    "static/css/main.25eb3e61.css",
-    "static/js/main.8f09e202.js"
+    "static/css/main.5928f3f3.css",
+    "static/js/main.b459c04a.js"
   ]
 }
