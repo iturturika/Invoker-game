@@ -11,14 +11,13 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
           const timerI = setInterval(function(){
             value = value + 1/60;
           if(update > 9){
-            clearInterval(timerI);
             setResultGame(value.toFixed(2));
+            clearInterval(timerI);
           }
           }, 1000/60);
     }
         
     startTimer();
-
     document.addEventListener('keydown', function (event) {
         if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
             setThirdCircle(event.key);   
@@ -30,74 +29,95 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
             firstCircle(a);
             prevB = b;
             spell = a + b + c;
-        } else if(event.key === 'r' || event.key === 'R' || event.key === 'к' || event.key === 'К'){
-            if(spell === 'qqq' && 'cold snap' !== prevSpell){
+        } else if((event.key === 'r' || event.key === 'R') || (event.key === 'к' || event.key === 'К')){
+            if(spell === 'qqq'){
                 setSpell1('cold snap');
                 spell = 'cold snap';
-                setSpell2(prevSpell);
+                if(prevSpell !== 'cold snap'){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'cold snap';
             }
-            if((spell === 'qqe' || spell === 'eqq' || spell === 'qeq') && 'ice wall' !== prevSpell){
+            if((spell === 'qqe' || spell === 'eqq' || spell === 'qeq')){
                 setSpell1('ice wall');
                 spell = 'ice wall';
-                setSpell2(prevSpell);
+                if('ice wall' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'ice wall';
             }
-            if((spell === 'qqw' || spell === 'wqq' || spell === 'qwq') && 'ghost walk' !== prevSpell){
+            if((spell === 'qqw' || spell === 'wqq' || spell === 'qwq')){
                 setSpell1('ghost walk');
                 spell = 'ghost walk';
-                setSpell2(prevSpell);
+                if('ghost walk' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'ghost walk';
             }
-            if(spell === 'www' && 'emp' !== prevSpell){
+            if(spell === 'www'){
                 setSpell1('emp');
                 spell = 'emp';
-                setSpell2(prevSpell);
+                if('emp' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'emp';
             }
-            if((spell === 'wwq' || spell === 'qww' || spell === 'wqw') && 'tornado' !== prevSpell){
+            if((spell === 'wwq' || spell === 'qww' || spell === 'wqw')){
                 setSpell1('tornado');
                 spell = 'tornado';
-                setSpell2(prevSpell);
+                if('tornado' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'tornado';
             }
-            if((spell === 'wwe' || spell === 'eww' || spell === 'wew')  && 'alacrity' !== prevSpell){
+            if((spell === 'wwe' || spell === 'eww' || spell === 'wew')){
                 setSpell1('alacrity');
                 spell = 'alacrity';
-                setSpell2(prevSpell);
+                if('alacrity' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'alacrity';
             }
-            if(spell === 'eee' && 'sun strike' !== prevSpell){
+            if(spell === 'eee'){
                 setSpell1('sun strike');
                 spell = 'sun strike';
-                setSpell2(prevSpell);
+                if('sun strike' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'sun strike';
             }
-            if((spell === 'eeq' || spell === 'qee' || spell === 'eqe') && 'forge spirit' !== prevSpell){
+            if((spell === 'eeq' || spell === 'qee' || spell === 'eqe')){
                 setSpell1('forge spirit');
                 spell = 'forge spirit';
-                setSpell2(prevSpell);
+                if('forge spirit' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'forge spirit';
             }
-            if((spell === 'eew' || spell === 'wee' || spell === 'ewe') && 'chaos meteor' !== prevSpell){
+            if((spell === 'eew' || spell === 'wee' || spell === 'ewe')){
                 setSpell1('chaos meteor');
                 spell = 'chaos meteor';
-                setSpell2(prevSpell);
+                if('chaos meteor' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'chaos meteor';
             }
-            if((spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq') && 'deafening blast' !== prevSpell){
+            if((spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq')){
                 setSpell1('deafening blast');
                 spell = 'deafening blast';
-                setSpell2(prevSpell);
+                if('deafening blast' !== prevSpell){
+                    setSpell2(prevSpell);  
+                }
                 prevSpell = 'deafening blast';
-            }
-            if(update > 8){
-                setGameState('Finished');
             }
             if(spell === generatedSpell){
                 generatedSpell = arr[Math.floor(Math.random() * arr.length)];
                 setRandomSpell(generatedSpell);
                 setUpdate(update++);
+            }
+            console.log(generatedSpell, spell);
+            if(update > 9){
+                setGameState('Finished');
             }
         }});
 }
