@@ -29,8 +29,9 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
             firstCircle(a);
             prevB = b;
             spell = a + b + c;
-        } else if((event.key === 'r' || event.key === 'R') || (event.key === 'к' || event.key === 'К')){
-            if(spell === 'qqq'){
+        }
+        if(event.key === 'r' || event.key === 'R' || event.key === 'к' || event.key === 'К'){
+            if(spell === 'qqq' || spell === 'ййй'){
                 setSpell1('cold snap');
                 spell = 'cold snap';
                 if(prevSpell !== 'cold snap'){
@@ -38,7 +39,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'cold snap';
             }
-            if((spell === 'qqe' || spell === 'eqq' || spell === 'qeq')){
+            if((spell === 'qqe' || spell === 'eqq' || spell === 'qeq' || spell === 'ййу' || spell === 'уйй' || spell === 'йуй')){
                 setSpell1('ice wall');
                 spell = 'ice wall';
                 if('ice wall' !== prevSpell){
@@ -46,7 +47,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'ice wall';
             }
-            if((spell === 'qqw' || spell === 'wqq' || spell === 'qwq')){
+            if((spell === 'qqw' || spell === 'wqq' || spell === 'qwq' || spell === 'ййц' || spell === 'цйй' || spell === 'йцй')){
                 setSpell1('ghost walk');
                 spell = 'ghost walk';
                 if('ghost walk' !== prevSpell){
@@ -54,7 +55,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'ghost walk';
             }
-            if(spell === 'www'){
+            if(spell === 'www' || spell === 'ццц'){
                 setSpell1('emp');
                 spell = 'emp';
                 if('emp' !== prevSpell){
@@ -62,7 +63,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'emp';
             }
-            if((spell === 'wwq' || spell === 'qww' || spell === 'wqw')){
+            if((spell === 'wwq' || spell === 'qww' || spell === 'wqw' || spell === 'ццй' || spell === 'йцц' || spell === 'цйц')){
                 setSpell1('tornado');
                 spell = 'tornado';
                 if('tornado' !== prevSpell){
@@ -70,7 +71,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'tornado';
             }
-            if((spell === 'wwe' || spell === 'eww' || spell === 'wew')){
+            if((spell === 'wwe' || spell === 'eww' || spell === 'wew' || spell === 'ццу' || spell === 'уцц' || spell === 'цуц')){
                 setSpell1('alacrity');
                 spell = 'alacrity';
                 if('alacrity' !== prevSpell){
@@ -78,7 +79,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'alacrity';
             }
-            if(spell === 'eee'){
+            if(spell === 'eee' || spell === 'ууу'){
                 setSpell1('sun strike');
                 spell = 'sun strike';
                 if('sun strike' !== prevSpell){
@@ -86,7 +87,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'sun strike';
             }
-            if((spell === 'eeq' || spell === 'qee' || spell === 'eqe')){
+            if((spell === 'eeq' || spell === 'qee' || spell === 'eqe' || spell === 'ууй' || spell === 'йуу' || spell === 'уйу')){
                 setSpell1('forge spirit');
                 spell = 'forge spirit';
                 if('forge spirit' !== prevSpell){
@@ -94,7 +95,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'forge spirit';
             }
-            if((spell === 'eew' || spell === 'wee' || spell === 'ewe')){
+            if((spell === 'eew' || spell === 'wee' || spell === 'ewe' || spell === 'ууц' || spell === 'цуу' || spell === 'уцу')){
                 setSpell1('chaos meteor');
                 spell = 'chaos meteor';
                 if('chaos meteor' !== prevSpell){
@@ -102,7 +103,7 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 }
                 prevSpell = 'chaos meteor';
             }
-            if((spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq')){
+            if((spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq' || spell === 'йцу' || spell === 'йуц' || spell === 'цйу' || spell === 'цуй' ||spell === 'уйц' || spell === 'уцй')){
                 setSpell1('deafening blast');
                 spell = 'deafening blast';
                 if('deafening blast' !== prevSpell){
@@ -115,7 +116,6 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
                 setRandomSpell(generatedSpell);
                 setUpdate(update++);
             }
-            console.log(generatedSpell, spell);
             if(update > 9){
                 setGameState('Finished');
             }

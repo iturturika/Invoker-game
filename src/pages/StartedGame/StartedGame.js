@@ -92,7 +92,7 @@ const StartedGame = (props) => {
             {props.spell2 === 'forge spirit' ? <img src={forge_spirit} alt="spell2"></img> : null}
             {props.spell2 === 'chaos meteor' ? <img src={chaos_meteor} alt="spell2"></img> : null}
             {props.spell2 === 'deafening blast' ? <img src={deafening_blast} alt="spell2"></img> : null}
-            {props.spell2 === 'nospell' ? <img src={nospell} alt="spell2"></img> : null}
+            {props.spell2 === 'nospell' || props.spell2 === '' ? <img src={nospell} alt="spell2"></img> : null}
           <span>F</span></li>
           <li className='square'><img src={invoke} alt="invoke"></img><span>R</span></li>
         </ul>
