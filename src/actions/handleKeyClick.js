@@ -1,6 +1,6 @@
 
 
-export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
+export const handleKeyClick = (setGameState, record, setRecord, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
     let a, b, c, prevB, prevC, spell, generatedSpell;
     let prevSpell = '';
     const arr  = ["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"];
@@ -12,6 +12,9 @@ export const handleKeyClick = (setGameState, setResultGame, setRandomSpell, spel
             value = value + 1/60;
           if(update > 9){
             setResultGame(value.toFixed(2));
+            if(value < record){
+                setRecord(value);
+            }
             clearInterval(timerI);
           }
           }, 1000/60);
