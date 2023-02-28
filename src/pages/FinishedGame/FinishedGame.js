@@ -12,7 +12,7 @@ const FinishedGame = (props) => {
         <h1>Invoker Game by undefined</h1>
         <img src={invoker} alt='invoker' className='img'></img>
         <h2>Game finished!</h2>
-        <h3>{props.resultGame}s</h3>
+        <h3>{props.resultGame}{props.resultGame < localStorage.getItem('record') ? ' new record!' : ' seconds'}</h3>
         <button className='button' onClick={() => {restartGame(props.setGameState);}} >Restart</button>
       </div>
 
