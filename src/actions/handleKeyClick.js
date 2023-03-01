@@ -115,8 +115,10 @@ export const handleKeyClick = (setGameState, record, setRecord, setResultGame, s
                 prevSpell = 'deafening blast';
             }
             if(spell === generatedSpell){
-                generatedSpell = arr[Math.floor(Math.random() * arr.length)];
+                const rndIndex = Math.floor(Math.random() * arr.length);
+                generatedSpell = arr[rndIndex];
                 setRandomSpell(generatedSpell);
+                arr.splice(rndIndex, 1);
                 setUpdate(update++);
             }
             if(update > 9){
