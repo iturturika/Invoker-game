@@ -23,7 +23,7 @@ import { restartGame } from '../../actions/restartGame';
 const StartedGame = (props) => {
   return (
      <div className='mainSection'>
-        <h1>Invoker Game by undefined</h1>
+        <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
         <img src={invoker} alt='invoker' className='img'></img>
         <div className='curent__spell'>
           {props.randomSpell === 'cold snap' ? <><img src={cold_snap} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
