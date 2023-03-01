@@ -9,14 +9,19 @@
     box-sizing: border-box;
     font-family: TrajanPro, serif;
     font-weight: 400;
+
 }
 
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//home/radiant_dire5.jpg");
+    background-position: center;
+
+}
 
 .App {
     display: flex;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//home/radiant_dire5.jpg");
+    width: 100%;
     height: 100vh;
-    min-width: 1500px;
     justify-content: center;
     align-items: center;
 }
@@ -89,4 +94,47 @@
         }
     
 
+}
+
+@media screen and (max-width: 1250px) {
+    .spell__list{
+        li{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1068px) {
+    .App{
+        transform: scale(0.7);
+    }
+    .spell__list{
+        li{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .App{
+        transform: scale(0.5);
+    }
+    .spell__list{
+        li{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .App{
+        transform: scale(0.3);
+    }
+    .spell__list{
+        li{
+            margin-bottom: 10px;
+        }
+    }
 }

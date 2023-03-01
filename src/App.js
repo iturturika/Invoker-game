@@ -23,7 +23,6 @@ import sun_strike from './img/invoker_sun_strike.png';
 import forge_spirit from './img/invoker_forge_spirit.png';
 import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
-
 function App() {
 ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
