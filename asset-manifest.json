@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae063307.css",
-    "main.js": "/static/js/main.eddf069c.js",
+    "main.css": "/static/css/main.2dfb2238.css",
+    "main.js": "/static/js/main.ce93b00a.js",
     "static/media/TrajanPro-Bold.otf": "/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
     "static/media/invoker.jpg": "/static/media/invoker.a2fc101bd300b5607b34.jpg",
     "static/media/invoker_exort.png": "/static/media/invoker_exort.a56f53208bb284a9d01c.png",
@@ -9,12 +9,20 @@
     "static/media/invoker_wex.png": "/static/media/invoker_wex.baabeddb7150b37f5752.png",
     "static/media/invoker_quas.png": "/static/media/invoker_quas.5750837f318a07971a3f.png",
     "static/media/no_spell.png": "/static/media/no_spell.5ac56c73ca6cbf3b9ac0.png",
+    "static/media/imortal.webp": "/static/media/imortal.3f3184bf57a83fc3ea6f.webp",
+    "static/media/ancient.webp": "/static/media/ancient.cbf1437eb0de9ec6047f.webp",
+    "static/media/legend.webp": "/static/media/legend.87a840c4f5a8e830e56a.webp",
+    "static/media/devine.webp": "/static/media/devine.acac8965958ba840c642.webp",
+    "static/media/archon.webp": "/static/media/archon.d291e2134f20f691f800.webp",
+    "static/media/crusader.webp": "/static/media/crusader.707a339ff622127788f2.webp",
+    "static/media/guardian.webp": "/static/media/guardian.1712854f7cca82353105.webp",
+    "static/media/herald.webp": "/static/media/herald.15bc75d20f22bae51050.webp",
     "index.html": "/index.html",
-    "main.ae063307.css.map": "/static/css/main.ae063307.css.map",
-    "main.eddf069c.js.map": "/static/js/main.eddf069c.js.map"
+    "main.2dfb2238.css.map": "/static/css/main.2dfb2238.css.map",
+    "main.ce93b00a.js.map": "/static/js/main.ce93b00a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae063307.css",
-    "static/js/main.eddf069c.js"
+    "static/css/main.2dfb2238.css",
+    "static/js/main.ce93b00a.js"
   ]
 }
