@@ -23,7 +23,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
     startTimer();
     const startGame = (event) => {
         if(event.key === 'Enter'){
-            window.location.replace("http://localhost:3000");
+            window.location.replace("https://invoker-game.com");
         }
         if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
             setThirdCircle(event.key);   
