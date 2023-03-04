@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.2dfb2238.css",
-    "main.js": "/static/js/main.ce93b00a.js",
+    "main.css": "/static/css/main.a9c122ee.css",
+    "main.js": "/static/js/main.b15cb2bf.js",
+    "static/media/invoker1.gif": "/static/media/invoker1.d869abaf521e85197572.gif",
     "static/media/TrajanPro-Bold.otf": "/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
-    "static/media/invoker.jpg": "/static/media/invoker.a2fc101bd300b5607b34.jpg",
     "static/media/invoker_exort.png": "/static/media/invoker_exort.a56f53208bb284a9d01c.png",
     "static/media/invoker_invoke.png": "/static/media/invoker_invoke.a06dc8565470549cac5f.png",
     "static/media/invoker_wex.png": "/static/media/invoker_wex.baabeddb7150b37f5752.png",
@@ -18,11 +18,11 @@
     "static/media/guardian.webp": "/static/media/guardian.1712854f7cca82353105.webp",
     "static/media/herald.webp": "/static/media/herald.15bc75d20f22bae51050.webp",
     "index.html": "/index.html",
-    "main.2dfb2238.css.map": "/static/css/main.2dfb2238.css.map",
-    "main.ce93b00a.js.map": "/static/js/main.ce93b00a.js.map"
+    "main.a9c122ee.css.map": "/static/css/main.a9c122ee.css.map",
+    "main.b15cb2bf.js.map": "/static/js/main.b15cb2bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dfb2238.css",
-    "static/js/main.ce93b00a.js"
+    "static/css/main.a9c122ee.css",
+    "static/js/main.b15cb2bf.js"
   ]
 }
