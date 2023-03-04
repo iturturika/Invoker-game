@@ -1,6 +1,6 @@
 import React from 'react'
 import './StartedGame.scss';
-import invoker from '../../img/invoker.jpg';
+import invoker1 from '../../img/invoker1.gif';
 import quas from '../../img/invoker_quas.png';
 import wex from '../../img/invoker_wex.png';
 import exort from '../../img/invoker_exort.png';
@@ -24,7 +24,7 @@ const StartedGame = (props) => {
   return (
      <div className='mainSection'>
         <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
-        <img src={invoker} alt='invoker' className='img'></img>
+        <img src={invoker1} alt='invoker' className='img'></img>
         <div className='curent__spell'>
           {props.randomSpell === 'cold snap' ? <><img src={cold_snap} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
           {props.randomSpell === 'ghost walk' ? <><img src={ghost_walk} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}

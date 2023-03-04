@@ -1,27 +1,30 @@
 
-
-export const handleKeyClick = (setGameState, record, setRecord, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
+export const handleKeyClick = (setGameState, gameState, record, setRecord, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
     let a, b, c, prevB, prevC, spell, generatedSpell;
     let prevSpell = '';
     const arr  = ["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"];
-    generatedSpell = arr[Math.floor(Math.random() * arr.length)];
+    let rndIndex = Math.floor(Math.random() * arr.length);
+    generatedSpell = arr[rndIndex];
     setRandomSpell(generatedSpell);
     const startTimer = () => {
-        let value = 0;
+        let value = 0, prevValue;
           const timerI = setInterval(function(){
             value = value + 1/60;
           if(update > 9){
             setResultGame(value.toFixed(2));
-            if(value < record){
-                setRecord(value);
+            if(value < prevValue){
+                localStorage.setItem('record', value);
             }
+            prevValue = value;
             clearInterval(timerI);
           }
           }, 1000/60);
     }
-        
     startTimer();
-    document.addEventListener('keydown', function (event) {
+    const startGame = (event) => {
+        if(event.key === 'Enter'){
+            window.location.replace("http://localhost:3000");
+        }
         if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
             setThirdCircle(event.key);   
             c = event.key;
@@ -115,15 +118,29 @@ export const handleKeyClick = (setGameState, record, setRecord, setResultGame, s
                 prevSpell = 'deafening blast';
             }
             if(spell === generatedSpell){
-                const rndIndex = Math.floor(Math.random() * arr.length);
+                arr.splice(rndIndex, 1);
+                rndIndex = Math.floor(Math.random() * arr.length);
                 generatedSpell = arr[rndIndex];
                 setRandomSpell(generatedSpell);
-                arr.splice(rndIndex, 1);
                 setUpdate(update++);
+                console.log(rndIndex);
             }
+            console.log(generatedSpell, spell, prevSpell, arr);
             if(update > 9){
                 setGameState('Finished');
+                setSpell1('nospell');
+                setSpell2('nospell');
+                firstCircle('');
+                secondCircle('');
+                setThirdCircle('');
+                setUpdate(0);
+                document.removeEventListener('keydown', startGame);
             }
-        }});
+        }
+    };
+        
+    document.addEventListener('keydown', startGame);
 }
+
+
 

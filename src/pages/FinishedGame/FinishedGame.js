@@ -1,7 +1,7 @@
 import React from 'react'
 import './FinishedGame.scss';
 
-import invoker from '../../img/invoker.jpg';
+import invoker1 from '../../img/invoker1.gif';
 import { restartGame } from '../../actions/restartGame';
 import herald from '../../img/herald.webp';
 import guardian from '../../img/guardian.webp';
@@ -16,7 +16,7 @@ const FinishedGame = (props) => {
   return (
      <div className='mainSection'>
         <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
-        <img src={invoker} alt='invoker' className='img'></img>
+        <img src={invoker1} alt='invoker' className='img'></img>
         <h2>Game finished!</h2>
         {props.resultGame >= 25 ? <img src={herald} alt='herald'></img> : null}
         {props.resultGame >= 20 && props.resultGame < 25 ? <img src={guardian} alt='guardian'></img> : null}
