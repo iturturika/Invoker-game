@@ -1,5 +1,5 @@
 
-export const handleKeyClick = (setGameState, gameState, record, setRecord, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
+export const handleKeyClick = (setGameState,  keyQuas, keyWex, keyExort, keyInvoke, gameState, record, setRecord, setResultGame, setRandomSpell, spell1, spell2, setSpell1, setSpell2, firstCircle, secondCircle, setThirdCircle, update, setUpdate) => {
     let a, b, c, prevB, prevC, spell, generatedSpell;
     let prevSpell = '';
     const arr  = ["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"];
@@ -22,22 +22,22 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
     }
     startTimer();
     const startGame = (event) => {
-        if(event.key === 'Enter'){
+        if(event.keyCode === 'Enter'){
             window.location.replace("https://invoker-game.com");
         }
-        if(event.key === 'q' || event.key === 'Q' || event.key === 'w' || event.key === 'W' || event.key === 'e' || event.key === 'E' || event.key === 'й' || event.key === 'Й' || event.key === 'ц' || event.key === 'Ц' || event.key === 'у' || event.key === 'У'){
-            setThirdCircle(event.key);   
-            c = event.key;
+        if(event.keyCode === keyQuas || event.keyCode === keyWex || event.keyCode === keyExort){
+            setThirdCircle(event.keyCode);   
+            c = event.keyCode;
             b = prevC;
             secondCircle(b);
             prevC = c;
             a = prevB;
             firstCircle(a);
             prevB = b;
-            spell = a + b + c;
+            spell = `${a}${b}${c}`;
         }
-        if(event.key === 'r' || event.key === 'R' || event.key === 'к' || event.key === 'К'){
-            if(spell === 'qqq' || spell === 'ййй'){
+        if(event.keyCode === keyInvoke){
+            if(spell === `${keyQuas}${keyQuas}${keyQuas}`){
                 setSpell1('cold snap');
                 spell = 'cold snap';
                 if(prevSpell !== 'cold snap'){
@@ -45,7 +45,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'cold snap';
             }
-            if((spell === 'qqe' || spell === 'eqq' || spell === 'qeq' || spell === 'ййу' || spell === 'уйй' || spell === 'йуй')){
+            if(spell === `${keyQuas}${keyQuas}${keyExort}` || spell === `${keyQuas}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyQuas}`){
                 setSpell1('ice wall');
                 spell = 'ice wall';
                 if('ice wall' !== prevSpell){
@@ -53,7 +53,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'ice wall';
             }
-            if((spell === 'qqw' || spell === 'wqq' || spell === 'qwq' || spell === 'ййц' || spell === 'цйй' || spell === 'йцй')){
+            if(spell === `${keyQuas}${keyQuas}${keyWex}` || spell === `${keyQuas}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyQuas}`){
                 setSpell1('ghost walk');
                 spell = 'ghost walk';
                 if('ghost walk' !== prevSpell){
@@ -61,7 +61,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'ghost walk';
             }
-            if(spell === 'www' || spell === 'ццц'){
+            if(spell === `${keyWex}${keyWex}${keyWex}`){
                 setSpell1('emp');
                 spell = 'emp';
                 if('emp' !== prevSpell){
@@ -69,7 +69,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'emp';
             }
-            if((spell === 'wwq' || spell === 'qww' || spell === 'wqw' || spell === 'ццй' || spell === 'йцц' || spell === 'цйц')){
+            if(spell === `${keyWex}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyWex}` || spell === `${keyWex}${keyQuas}${keyQuas}`){
                 setSpell1('tornado');
                 spell = 'tornado';
                 if('tornado' !== prevSpell){
@@ -77,7 +77,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'tornado';
             }
-            if((spell === 'wwe' || spell === 'eww' || spell === 'wew' || spell === 'ццу' || spell === 'уцц' || spell === 'цуц')){
+            if((spell === `${keyWex}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyWex}` || spell === `${keyExort}${keyQuas}${keyQuas}`)){
                 setSpell1('alacrity');
                 spell = 'alacrity';
                 if('alacrity' !== prevSpell){
@@ -85,7 +85,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'alacrity';
             }
-            if(spell === 'eee' || spell === 'ууу'){
+            if(spell === `${keyExort}${keyExort}${keyExort}`){
                 setSpell1('sun strike');
                 spell = 'sun strike';
                 if('sun strike' !== prevSpell){
@@ -93,7 +93,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'sun strike';
             }
-            if((spell === 'eeq' || spell === 'qee' || spell === 'eqe' || spell === 'ууй' || spell === 'йуу' || spell === 'уйу')){
+            if((spell === `${keyExort}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyExort}` || spell === `${keyQuas}${keyExort}${keyExort}`)){
                 setSpell1('forge spirit');
                 spell = 'forge spirit';
                 if('forge spirit' !== prevSpell){
@@ -101,7 +101,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'forge spirit';
             }
-            if((spell === 'eew' || spell === 'wee' || spell === 'ewe' || spell === 'ууц' || spell === 'цуу' || spell === 'уцу')){
+            if((spell === `${keyExort}${keyExort}${keyWex}` || spell === `${keyExort}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyExort}`)){
                 setSpell1('chaos meteor');
                 spell = 'chaos meteor';
                 if('chaos meteor' !== prevSpell){
@@ -109,7 +109,7 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 }
                 prevSpell = 'chaos meteor';
             }
-            if((spell === 'qwe' || spell === 'qew' || spell === 'wqe' || spell === 'weq' ||spell === 'eqw' || spell === 'ewq' || spell === 'йцу' || spell === 'йуц' || spell === 'цйу' || spell === 'цуй' ||spell === 'уйц' || spell === 'уцй')){
+            if((spell === `${keyQuas}${keyWex}${keyExort}` || spell === `${keyQuas}${keyExort}${keyWex}` || spell === `${keyWex}${keyQuas}${keyExort}` || spell === `${keyWex}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyWex}` || spell === `${keyExort}${keyWex}${keyQuas}`)){
                 setSpell1('deafening blast');
                 spell = 'deafening blast';
                 if('deafening blast' !== prevSpell){
@@ -125,7 +125,6 @@ export const handleKeyClick = (setGameState, gameState, record, setRecord, setRe
                 setUpdate(update++);
                 console.log(rndIndex);
             }
-            console.log(generatedSpell, spell, prevSpell, arr);
             if(update > 9){
                 setGameState('Finished');
                 setSpell1('nospell');

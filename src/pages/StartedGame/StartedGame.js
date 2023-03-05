@@ -40,28 +40,19 @@ const StartedGame = (props) => {
         <button className='restart' onClick={() => {restartGame(props.setGameState)}}>Restart</button>
         <ul className='window'>
           <li className='circle'>
-            {props.firstCircle === 'q' || props.firstCircle === 'Q' ? <img src={quas} alt="quas"></img> : undefined}
-            {props.firstCircle === 'w' || props.firstCircle === 'W' ? <img src={wex} alt="wex"></img> : null}
-            {props.firstCircle === 'e' || props.firstCircle === 'E' ? <img src={exort} alt="exort"></img> : null}
-            {props.firstCircle === 'й' || props.firstCircle === 'Й' ? <img src={quas} alt="quas"></img> : undefined}
-            {props.firstCircle === 'ц' || props.firstCircle === 'Ц' ? <img src={wex} alt="wex"></img> : null}
-            {props.firstCircle === 'у' || props.firstCircle === 'У' ? <img src={exort} alt="exort"></img> : null}
+            {props.firstCircle === props.keyQuas ? <img src={quas} alt="quas"></img> : undefined}
+            {props.firstCircle === props.keyWex ? <img src={wex} alt="wex"></img> : null}
+            {props.firstCircle === props.keyExort ? <img src={exort} alt="exort"></img> : null}
           </li>
           <li className='circle'>
-            {props.secondCircle === 'q' || props.secondCircle === 'Q' ? <img src={quas} alt="quas"></img> : null}
-            {props.secondCircle === 'w' || props.secondCircle === 'W' ? <img src={wex} alt="wex"></img> : null}
-            {props.secondCircle === 'e' || props.secondCircle === 'E' ? <img src={exort} alt="exort"></img> : null}
-            {props.secondCircle === 'й' || props.secondCircle === 'Й' ? <img src={quas} alt="quas"></img> : null}
-            {props.secondCircle === 'ц' || props.secondCircle === 'Ц' ? <img src={wex} alt="wex"></img> : null}
-            {props.secondCircle === 'у' || props.secondCircle === 'У' ? <img src={exort} alt="exort"></img> : null}
+            {props.secondCircle === props.keyQuas ? <img src={quas} alt="quas"></img> : undefined}
+            {props.secondCircle === props.keyWex ? <img src={wex} alt="wex"></img> : null}
+            {props.secondCircle === props.keyExort ? <img src={exort} alt="exort"></img> : null}
           </li>
           <li className='circle'>
-            {props.thirdCircle === 'q' || props.thirdCircle === 'Q' ? <img src={quas} alt="quas"></img> : null}
-            {props.thirdCircle === 'w' || props.thirdCircle === 'W' ? <img src={wex} alt="wex"></img> : null}
-            {props.thirdCircle === 'e' || props.thirdCircle === 'E' ? <img src={exort} alt="exort"></img> : null}
-            {props.thirdCircle === 'й' || props.thirdCircle === 'Й' ? <img src={quas} alt="quas"></img> : null}
-            {props.thirdCircle === 'ц' || props.thirdCircle === 'Ц' ? <img src={wex} alt="wex"></img> : null}
-            {props.thirdCircle === 'у' || props.thirdCircle === 'У' ? <img src={exort} alt="exort"></img> : null}
+            {props.thirdCircle === props.keyQuas ? <img src={quas} alt="quas"></img> : undefined}
+            {props.thirdCircle === props.keyWex ? <img src={wex} alt="wex"></img> : null}
+            {props.thirdCircle === props.keyExort ? <img src={exort} alt="exort"></img> : null}
           </li>
         </ul>
         <ul className='spells__group'>
