@@ -1,0 +1,23 @@
+.overlay{
+    display: flex;
+    margin: 0 auto;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.486);
+    z-index: 2;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-size: 40px;
+        font-weight: 400;
+    }
+    b{
+        font-size: 50px;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}
+

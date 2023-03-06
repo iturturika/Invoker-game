@@ -23,6 +23,8 @@ import sun_strike from './img/invoker_sun_strike.png';
 import forge_spirit from './img/invoker_forge_spirit.png';
 import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
+import { Overlay } from './components/Overlay/Overlay.js';
+
 function App() {
 ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
@@ -35,36 +37,59 @@ const [update, setUpdate] = React.useState(0);
 const [randomSpell, setRandomSpell] = React.useState();
 const [resultGame, setResultGame] = React.useState();
 const [record, setRecord] = React.useState(0);
+const [keyQuas, setKeyQuas] = React.useState(81);
+const [keyWex, setKeyWex] = React.useState(87);
+const [keyExort, setKeyExort] = React.useState(69);
+const [keyInvoke, setKeyInvoke] = React.useState(82);
+const [onClickOverlay, setOnClickOverlay] = React.useState(false);
+const [bindKeyName, setBindKeyName] = React.useState('QUAS');
+
+const setKeyBinds = (key) => {
+  const setKey = (event) => {
+      key(event.keyCode);
+      setOnClickOverlay(false);
+      document.removeEventListener('keydown', setKey);
+  }
+  document.addEventListener('keydown', setKey);
+}
 return (
 
       <div className="App">
+        { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
       <div className='controlls'>
         <h2>Controlls</h2>
         <ul className='controll__list'>
-          <li><img src={quas} alt="quas"></img><p>Q - Quas</p></li>
-          <li><img src={wex} alt="wex"></img><p>W - Wex</p></li>
-          <li><img src={exort} alt="exort"></img><p>E - Exort</p></li>
+          <li><img src={quas} alt="quas"></img><p>{String.fromCharCode(keyQuas)} - Quas</p></li>
+          <li><img src={wex} alt="wex"></img><p>{String.fromCharCode(keyWex)} - Wex</p></li>
+          <li><img src={exort} alt="exort"></img><p>{String.fromCharCode(keyExort)} - Exort</p></li>
           <li><img src={nospell} alt="spell1"></img><p>D - Spell 1 </p></li>
           <li><img src={nospell} alt="spell2"></img><p>F - Spell 2 </p></li>
-          <li><img src={invokeImg} alt="invoke"></img><p>R - Invoke</p></li>
+          <li><img src={invokeImg} alt="invoke"></img><p>{String.fromCharCode(keyInvoke)} - Invoke</p></li>
         </ul>
+        <h3 className='h3__keybinds'>Set keybinds <button className='key__binds__button' onClick={() => {setKeyQuas(81); setKeyWex(87); setKeyExort(69); setKeyInvoke(82);}}>Reset</button></h3>
+        <div className='keybinds'>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyQuas); setBindKeyName('QUAS');}}>QUAS</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyWex); setBindKeyName('WEX');}}>WEX</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyExort); setBindKeyName('EXORT');}}>EXORT</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyInvoke); setBindKeyName('INVOKE');}}>INVOKE</button>
+        </div>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
       <div className='spells'>
         <h2>Spells</h2>
         <ul className='spell__list'>
-          <li><img src={cold_snap} alt="cold_snap"></img><p>Cold Snap - Q Q Q</p></li>
-          <li><img src={ghost_walk} alt="ghost_walk"></img><p>Ghost Walk - Q Q W</p></li>
-          <li><img src={ice_wall} alt="ice_wall"></img><p>Ice Wall - Q Q E</p></li>
-          <li><img src={emp} alt="emp"></img><p>EMP - W W W</p></li>
-          <li><img src={tornado} alt="tornado"></img><p>Tornado - W W Q</p></li>
-          <li><img src={alacrity} alt="alacrity"></img><p>Alacrity - W W E</p></li>
-          <li><img src={sun_strike} alt="sun_strike"></img><p>Sun Strike - E E E</p></li>
-          <li><img src={forge_spirit} alt="forge_spirit"></img><p>Forge Spirit - E E Q</p></li>
-          <li><img src={chaos_meteor} alt="chaos_meteor"></img><p>Chaos Meteor - E E W</p></li>
-          <li><img src={deafening_blast} alt="deafening_blast"></img><p>Deafening Blast - Q W E</p></li>
+          <li><img src={cold_snap} alt="cold_snap"></img><p>Cold Snap - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)}</p></li>
+          <li><img src={ghost_walk} alt="ghost_walk"></img><p>Ghost Walk - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)}</p></li>
+          <li><img src={ice_wall} alt="ice_wall"></img><p>Ice Wall - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyExort)}</p></li>
+          <li><img src={emp} alt="emp"></img><p>EMP - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)}</p></li>
+          <li><img src={tornado} alt="tornado"></img><p>Tornado - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyQuas)}</p></li>
+          <li><img src={alacrity} alt="alacrity"></img><p>Alacrity - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
+          <li><img src={sun_strike} alt="sun_strike"></img><p>Sun Strike - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)}</p></li>
+          <li><img src={forge_spirit} alt="forge_spirit"></img><p>Forge Spirit - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyQuas)}</p></li>
+          <li><img src={chaos_meteor} alt="chaos_meteor"></img><p>Chaos Meteor - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyWex)}</p></li>
+          <li><img src={deafening_blast} alt="deafening_blast"></img><p>Deafening Blast - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
         </ul>
       </div>
     </div>
