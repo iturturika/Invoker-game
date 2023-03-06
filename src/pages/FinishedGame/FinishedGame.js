@@ -35,7 +35,8 @@ const FinishedGame = (props) => {
         {props.resultGame >= 8 && props.resultGame < 9 ? <img src={ancient} alt='ancient'></img> : null}
         {props.resultGame >= 7 && props.resultGame < 8 ? <img src={devine} alt='devine'></img> : null}
         {props.resultGame < 7 ? <img src={imortal} alt='ancient'></img> : null}
-        <h3>{props.resultGame}{props.resultGame < localStorage.getItem('record') ? ' new record!' : ' seconds'}</h3>
+        <h3>{props.resultGame} seconds</h3>
+        <p>{props.resultGame < props.record ? 'New record!' : null}</p>
         <button className='button' onClick={() => {restartGame(props.setGameState);}} >Restart</button>
       </div>
 

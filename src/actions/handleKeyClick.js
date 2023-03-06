@@ -7,21 +7,25 @@ export const handleKeyClick = (setGameState,  keyQuas, keyWex, keyExort, keyInvo
     generatedSpell = arr[rndIndex];
     setRandomSpell(generatedSpell);
     const startTimer = () => {
-        let value = 0, prevValue;
+        let value = 0;
           const timerI = setInterval(function(){
             value = value + 1/60;
           if(update > 9){
             setResultGame(value.toFixed(2));
-            if(value < prevValue){
-                localStorage.setItem('record', value);
+            if(value < record){
+                setRecord(value);
             }
-            prevValue = value;
             clearInterval(timerI);
           }
           }, 1000/60);
     }
     startTimer();
-    console.log(generatedSpell, arr);
+    setSpell1('nospell');
+    setSpell2('nospell');
+    firstCircle('');
+    secondCircle('');
+    setThirdCircle('');
+    setUpdate(0);
     const startGame = (event) => {
         if(event.keyCode === 13){
                 setGameState('Waiting');
@@ -131,7 +135,6 @@ export const handleKeyClick = (setGameState,  keyQuas, keyWex, keyExort, keyInvo
                 generatedSpell = arr[rndIndex];
                 setRandomSpell(generatedSpell);
                 setUpdate(update++);
-                console.log(rndIndex);
             }
             if(update > 9){
                 setGameState('Finished');
