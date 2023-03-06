@@ -10,12 +10,14 @@ import nospell from '../../img/no_spell.png';
 import {startGame} from '../../actions/startGame.js';
 import { handleKeyClick } from '../../actions/handleKeyClick';
 const PreviusGameState = (props) => {
+  const start = (event) => {
+    if(event.key === 'Enter') {
+      startGame(props.setGameState); handleKeyClick(props.setGameState, props.keyQuas, props.keyWex, props.keyExort, props.keyInvoke, props.gameState, props.record, props.setRecord, props.setResultGame, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);
+      document.removeEventListener('keydown', start);
+    }
+  }
   const onClickEnter = () => {
-    document.addEventListener('keydown', function (event) {
-      if(event.key === 'Enter') {
-        startGame(props.setGameState); handleKeyClick(props.setGameState, props.keyQuas, props.keyWex, props.keyExort, props.keyInvoke, props.gameState, props.record, props.setRecord, props.setResultGame, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);
-      }
-    })
+    document.addEventListener('keydown', start);
   }
   return (
      <div className='mainSection' onKeyDown={onClickEnter()}>

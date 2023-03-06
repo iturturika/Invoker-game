@@ -13,8 +13,17 @@ import devine from '../../img/devine.webp';
 import imortal from '../../img/imortal.webp';
 
 const FinishedGame = (props) => {
+  const restart = (event) => {
+    if(event.key === 'Enter'){
+      props.setGameState('Waiting');
+      document.removeEventListener('keydown', restart);
+    }
+  }
+  const onEnter = () => {
+    document.addEventListener('keydown', restart);
+  }
   return (
-     <div className='mainSection'>
+     <div className='mainSection' onKeyDown={onEnter()}>
         <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
         <img src={invoker1} alt='invoker' className='img'></img>
         <h2>Game finished!</h2>

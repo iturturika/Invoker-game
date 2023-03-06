@@ -21,9 +21,10 @@ export const handleKeyClick = (setGameState,  keyQuas, keyWex, keyExort, keyInvo
           }, 1000/60);
     }
     startTimer();
+    console.log(generatedSpell, arr);
     const startGame = (event) => {
         if(event.keyCode === 13){
-            setGameState('Waiting');
+                setGameState('Waiting');
                 setSpell1('nospell');
                 setSpell2('nospell');
                 firstCircle('');
