@@ -43,28 +43,12 @@ const [keyExort, setKeyExort] = React.useState(69);
 const [keyInvoke, setKeyInvoke] = React.useState(82);
 const [onClickOverlay, setOnClickOverlay] = React.useState(false);
 const [bindKeyName, setBindKeyName] = React.useState('QUAS');
-const setKeyBinds = (keyName) => {
+
+const setKeyBinds = (key) => {
   const setKey = (event) => {
-    if(keyName === 'QUAS'){
-      setKeyQuas(event.keyCode);
+      key(event.keyCode);
       setOnClickOverlay(false);
       document.removeEventListener('keydown', setKey);
-    }
-    if(keyName === 'WEX'){
-      setKeyQuas(event.keyCode);
-      setOnClickOverlay(false);
-      document.removeEventListener('keydown', setKey);
-    }
-    if(keyName === 'EXORT'){
-      setKeyQuas(event.keyCode);
-      setOnClickOverlay(false);
-      document.removeEventListener('keydown', setKey);
-    }
-    if(keyName === 'INVOKE'){
-      setKeyQuas(event.keyCode);
-      setOnClickOverlay(false);
-      document.removeEventListener('keydown', setKey);
-    }
   }
   document.addEventListener('keydown', setKey);
 }
@@ -82,11 +66,13 @@ return (
           <li><img src={nospell} alt="spell2"></img><p>F - Spell 2 </p></li>
           <li><img src={invokeImg} alt="invoke"></img><p>{String.fromCharCode(keyInvoke)} - Invoke</p></li>
         </ul>
-        <h3>Set keybinds</h3>
-        <button onClick={() => {setKeyBinds('QUAS'); setOnClickOverlay(true); setBindKeyName('QUAS');}}>QUAS</button>
-        <button onClick={() => {setKeyBinds('WEX'); setOnClickOverlay(true); setBindKeyName('WEX');}}>WEX</button>
-        <button onClick={() => {setKeyBinds('EXORT'); setOnClickOverlay(true); setBindKeyName('EXORT');}}>EXORT</button>
-        <button onClick={() => {setKeyBinds('INVOKE'); setOnClickOverlay(true); setBindKeyName('INVOKE');}}>INVOKE</button>
+        <h3 className='h3__keybinds'>Set keybinds <button className='key__binds__button' onClick={() => {setKeyQuas(81); setKeyWex(87); setKeyExort(69); setKeyInvoke(82);}}>Reset</button></h3>
+        <div className='keybinds'>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyQuas); setBindKeyName('QUAS');}}>QUAS</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyWex); setBindKeyName('WEX');}}>WEX</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyExort); setBindKeyName('EXORT');}}>EXORT</button>
+          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyInvoke); setBindKeyName('INVOKE');}}>INVOKE</button>
+        </div>
       </div>
       {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
       {gameState === 'Started' ? <StartedGame setGameState={setGameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}

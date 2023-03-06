@@ -22,8 +22,15 @@ export const handleKeyClick = (setGameState,  keyQuas, keyWex, keyExort, keyInvo
     }
     startTimer();
     const startGame = (event) => {
-        if(event.keyCode === 'Enter'){
-            window.location.replace("https://invoker-game.com");
+        if(event.keyCode === 13){
+            setGameState('Waiting');
+                setSpell1('nospell');
+                setSpell2('nospell');
+                firstCircle('');
+                secondCircle('');
+                setThirdCircle('');
+                setUpdate(0);
+                document.removeEventListener('keydown', startGame);
         }
         if(event.keyCode === keyQuas || event.keyCode === keyWex || event.keyCode === keyExort){
             setThirdCircle(event.keyCode);   

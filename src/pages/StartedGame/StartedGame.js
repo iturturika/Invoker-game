@@ -56,9 +56,9 @@ const StartedGame = (props) => {
           </li>
         </ul>
         <ul className='spells__group'>
-          <li className='square'><img src={quas} alt="quas"></img><span>Q</span></li>
-          <li className='square'><img src={wex} alt="wex"></img><span>W</span></li>
-          <li className='square'><img src={exort} alt="exort"></img><span>E</span></li>
+          <li className='square'><img src={quas} alt="quas"></img><span>{String.fromCharCode(props.keyQuas)}</span></li>
+          <li className='square'><img src={wex} alt="wex"></img><span>{String.fromCharCode(props.keyWex)}</span></li>
+          <li className='square'><img src={exort} alt="exort"></img><span>{String.fromCharCode(props.keyExort)}</span></li>
           <li className='square'>
             {props.spell1 === 'cold snap' ? <img src={cold_snap} alt="spell2"></img> : null}
             {props.spell1 === 'ghost walk' ? <img src={ghost_walk} alt="spell2"></img> : null}
@@ -85,7 +85,7 @@ const StartedGame = (props) => {
             {props.spell2 === 'deafening blast' ? <img src={deafening_blast} alt="spell2"></img> : null}
             {props.spell2 === 'nospell' || props.spell2 === '' ? <img src={nospell} alt="spell2"></img> : null}
           <span>F</span></li>
-          <li className='square'><img src={invoke} alt="invoke"></img><span>R</span></li>
+          <li className='square'><img src={invoke} alt="invoke"></img><span>{String.fromCharCode(props.keyInvoke)}</span></li>
         </ul>
       </div>
 

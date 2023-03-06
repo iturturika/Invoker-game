@@ -13,7 +13,7 @@ const PreviusGameState = (props) => {
   const onClickEnter = () => {
     document.addEventListener('keydown', function (event) {
       if(event.key === 'Enter') {
-        startGame(props.setGameState); handleKeyClick(props.setGameState, props.gameState, props.record, props.setRecord, props.setResultGame, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);
+        startGame(props.setGameState); handleKeyClick(props.setGameState, props.keyQuas, props.keyWex, props.keyExort, props.keyInvoke, props.gameState, props.record, props.setRecord, props.setResultGame, props.setRandomSpell, props.spell1, props.spell2, props.setSpell1, props.setSpell2, props.setFirstCircle, props.setSecondCircle, props.setThirdCircle, props.update, props.setUpdate);
       }
     })
   }
@@ -28,12 +28,12 @@ const PreviusGameState = (props) => {
           <li className='circle'></li>
         </ul>
         <ul className='spells__group'>
-          <li className='square'><img src={quas} alt="quas"></img><span>Q</span></li>
-          <li className='square'><img src={wex} alt="wex"></img><span>W</span></li>
-          <li className='square'><img src={exort} alt="exort"></img><span>E</span></li>
+          <li className='square'><img src={quas} alt="quas"></img><span>{String.fromCharCode(props.keyQuas)}</span></li>
+          <li className='square'><img src={wex} alt="wex"></img><span>{String.fromCharCode(props.keyWex)}</span></li>
+          <li className='square'><img src={exort} alt="exort"></img><span>{String.fromCharCode(props.keyExort)}</span></li>
           <li className='square'><img src={nospell} alt="spell1"></img><span>D</span></li>
           <li className='square'><img src={nospell} alt="spell2"></img><span>F</span></li>
-          <li className='square'><img src={invoke} alt="invoke"></img><span>R</span></li>
+          <li className='square'><img src={invoke} alt="invoke"></img><span>{String.fromCharCode(props.keyInvoke)}</span></li>
         </ul>
       </div>
 
