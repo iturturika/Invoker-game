@@ -44,19 +44,34 @@ const [keyInvoke, setKeyInvoke] = React.useState(82);
 const [onClickOverlay, setOnClickOverlay] = React.useState(false);
 const [bindKeyName, setBindKeyName] = React.useState('QUAS');
 const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+const startTimer = () => {
+    let value = 0;
+    const timerI = setInterval(function(){
+      value = value + 1/60;
+      console.log(update);
+    if(update > 9){
+      setResultGame(value.toFixed(2));
+      setGameState('Finished');
+      if(value < record){
+          setRecord(value);
+      }
+      clearInterval(timerI);
+    }
+    }, 1000/60);
+}
 
 const generateSpell = () => {
   let rndIndex = Math.floor(Math.random() * arr.length);
-  const newArr = arr.splice(rndIndex, 1);
-  setArr(newArr);
+  setArr(arr.filter((el) => el !== arr[rndIndex]));
   setRandomSpell(arr[rndIndex]);
-  console.log(rndIndex, arr);
-
+  console.log(rndIndex);
 }
 
 const verifingSpell = (spell) => {
   if(spell === randomSpell){
     generateSpell();
+    setUpdate(update => update + 1);
+    console.log(spell,arr);
   }
 }
 
@@ -66,7 +81,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyQuas}${keyQuas}${keyQuas}`){
       setSpell1(`cold snap`);
-      verifingSpell(`cold snap`);
+      spell = `cold snap`;
       if(spell1 !== `cold snap`){
         setSpell2(spell1);
       }
@@ -74,7 +89,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyQuas}${keyQuas}${keyExort}` || spell === `${keyQuas}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyQuas}`){
       setSpell1(`ice wall`);
-      verifingSpell(`ice wall`);
+      spell = `ice wall`;
       if(spell1 !== `ice wall`){
         setSpell2(spell1);
       }
@@ -82,7 +97,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyQuas}${keyQuas}${keyWex}` || spell === `${keyQuas}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyQuas}`){
       setSpell1(`ghost walk`);
-      verifingSpell(`ghost walk`);
+      spell = `ghost walk`;
       if(spell1 !== `ghost walk`){
         setSpell2(spell1);
       }
@@ -90,7 +105,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyWex}${keyWex}${keyWex}`){
       setSpell1(`emp`);
-      verifingSpell(`emp`);
+      spell = `emp`;
       if(spell1 !== `emp`){
         setSpell2(spell1);
       }
@@ -98,7 +113,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyWex}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyWex}` || spell === `${keyWex}${keyQuas}${keyQuas}`){
       setSpell1(`tornado`);
-      verifingSpell(`tornado`);
+      spell = `tornado`;
       if(spell1 !== `tornado`){
         setSpell2(spell1);
       }
@@ -106,7 +121,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyWex}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyWex}` || spell === `${keyExort}${keyQuas}${keyQuas}`){
       setSpell1(`alacrity`);
-      verifingSpell(`alacrity`);
+      spell = `alacrity`;
       if(spell1 !== `alacrity`){
         setSpell2(spell1);
       }
@@ -114,7 +129,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyExort}${keyExort}${keyExort}`){
       setSpell1(`sun strike`);
-      verifingSpell(`sun strike`);
+      spell = `sun strike`;
       if(spell1 !== `sun strike`){
         setSpell2(spell1);
       }
@@ -122,7 +137,7 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyExort}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyExort}` || spell === `${keyQuas}${keyExort}${keyExort}`){
       setSpell1(`forge spirit`);
-      verifingSpell(`forge spirit`);
+      spell = `forge spirit`;
       if(spell1 !== `forge spirit`){
         setSpell2(spell1);
       }
@@ -130,7 +145,7 @@ const invokeSpell = (key) => {
     
     if(spell === `${keyExort}${keyExort}${keyWex}` || spell === `${keyExort}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyExort}`){
       setSpell1(`chaos meteor`);
-      verifingSpell(`chaos meteor`);
+      spell = `chaos meteor`;
       if(spell1 !== `chaos meteor`){
         setSpell2(spell1);
       }
@@ -138,11 +153,13 @@ const invokeSpell = (key) => {
 
     if(spell === `${keyQuas}${keyWex}${keyExort}` || spell === `${keyQuas}${keyExort}${keyWex}` || spell === `${keyWex}${keyQuas}${keyExort}` || spell === `${keyWex}${keyExort}${keyQuas}` || spell === `${keyExort}${keyQuas}${keyWex}` || spell === `${keyExort}${keyWex}${keyQuas}`){
       setSpell1(`deafening blast`);
-      verifingSpell(`deafening blast`);
+      spell = `deafening blast`;
       if(spell1 !== `deafening blast`){
         setSpell2(spell1);
       }
     }
+
+    verifingSpell(spell);
 
   }
 }
@@ -159,6 +176,7 @@ const changingGameState = (key) => {
   if(key === 13 && gameState === "Waiting"){
     setGameState("Started");
     generateSpell();
+    startTimer();
     console.log("Game started");
   }
   if(key === 13 && (gameState === "Started" || gameState === "Finished")){
