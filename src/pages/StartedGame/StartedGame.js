@@ -19,7 +19,6 @@ import chaos_meteor from '../../img/invoker_chaos_meteor.png';
 import deafening_blast from '../../img/invoker_deafening_blast.png';
 
 
-import { restartGame } from '../../actions/restartGame';
 const StartedGame = (props) => {
   return (
      <div className='mainSection'>
@@ -37,7 +36,7 @@ const StartedGame = (props) => {
           {props.randomSpell === 'chaos meteor' ? <><img src={chaos_meteor} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
           {props.randomSpell === 'deafening blast' ? <><img src={deafening_blast} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
         </div>
-        <button className='restart' onClick={() => {restartGame(props.setGameState)}}>Restart</button>
+        <button className='restart'>Restart</button>
         <ul className='window'>
           <li className='circle'>
             {props.firstCircle === props.keyQuas ? <img src={quas} alt="quas"></img> : undefined}
