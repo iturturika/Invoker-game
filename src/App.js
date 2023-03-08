@@ -44,14 +44,14 @@ const [keyInvoke, setKeyInvoke] = React.useState(82);
 const [onClickOverlay, setOnClickOverlay] = React.useState(false);
 const [bindKeyName, setBindKeyName] = React.useState('QUAS');
 const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+
 const startTimer = () => {
-    let value = 0;
+  let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
       console.log(update);
     if(update > 9){
       setResultGame(value.toFixed(2));
-      setGameState('Finished');
       if(value < record){
           setRecord(value);
       }
