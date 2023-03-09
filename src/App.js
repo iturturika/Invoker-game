@@ -44,9 +44,11 @@ const [keyInvoke, setKeyInvoke] = React.useState(82);
 const [onClickOverlay, setOnClickOverlay] = React.useState(false);
 const [bindKeyName, setBindKeyName] = React.useState('QUAS');
 const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+const [stop, setStop] = React.useState(false);
 const updateRef = React.useRef(update);
+const stopRef = React.useRef(stop);
 React.useEffect(() => {updateRef.current = update}, [update]);
-
+React.useEffect(() => {stopRef.current = stop}, [stop]);
 const stopTimer = (timerId) => {
   clearInterval(timerId);
   console.log('cleared');
@@ -56,6 +58,7 @@ const startTimer = () => {
   let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
+      console.log(value);
       if(updateRef.current === 9){
         setResultGame(value.toFixed(2));
         setGameState("Finished");
@@ -64,6 +67,10 @@ const startTimer = () => {
         }
         stopTimer(timerI);
       };
+      if(stopRef.current){
+        stopTimer(timerI);
+        console.log('Stopped');
+      }
     }, 1000/60);
 }
 
@@ -183,6 +190,7 @@ const setCircles = (key) => {
 const startGame = () => {
   setGameState("Started");
   generateSpell();
+  setStop(false);
   startTimer();
 }
 
@@ -196,6 +204,7 @@ const endGame = () => {
   setThirdCircle('');
   setUpdate(0);
   setArr(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+  setStop(true);
   console.log("Game waiting");
 }
 
