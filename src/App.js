@@ -244,44 +244,65 @@ const setKeyBinds = (key) => {
 }
 return (
 
-      <div className="App">
+    <div className="App">
+      <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
-      <div className='controlls'>
-        <h2>Controlls</h2>
-        <ul className='controll__list'>
-          <li><img src={quas} alt="quas"></img><p>{String.fromCharCode(keyQuas)} - Quas</p></li>
-          <li><img src={wex} alt="wex"></img><p>{String.fromCharCode(keyWex)} - Wex</p></li>
-          <li><img src={exort} alt="exort"></img><p>{String.fromCharCode(keyExort)} - Exort</p></li>
-          <li><img src={nospell} alt="spell1"></img><p>D - Spell 1 </p></li>
-          <li><img src={nospell} alt="spell2"></img><p>F - Spell 2 </p></li>
-          <li><img src={invokeImg} alt="invoke"></img><p>{String.fromCharCode(keyInvoke)} - Invoke</p></li>
-        </ul>
-        <h3 className='h3__keybinds'>Set keybinds <button className='key__binds__button' onClick={() => {setKeyQuas(81); setKeyWex(87); setKeyExort(69); setKeyInvoke(82);}}>Reset</button></h3>
-        <div className='keybinds'>
-          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyQuas); setBindKeyName('QUAS');}}>QUAS</button>
-          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyWex); setBindKeyName('WEX');}}>WEX</button>
-          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyExort); setBindKeyName('EXORT');}}>EXORT</button>
-          <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyInvoke); setBindKeyName('INVOKE');}}>INVOKE</button>
+        <div className='controlls'>
+          <h2>Controlls</h2>
+          <ul className='controll__list'>
+            <li><img src={quas} alt="quas"></img><p>{String.fromCharCode(keyQuas)} - Quas</p></li>
+            <li><img src={wex} alt="wex"></img><p>{String.fromCharCode(keyWex)} - Wex</p></li>
+            <li><img src={exort} alt="exort"></img><p>{String.fromCharCode(keyExort)} - Exort</p></li>
+            <li><img src={nospell} alt="spell1"></img><p>D - Spell 1 </p></li>
+            <li><img src={nospell} alt="spell2"></img><p>F - Spell 2 </p></li>
+            <li><img src={invokeImg} alt="invoke"></img><p>{String.fromCharCode(keyInvoke)} - Invoke</p></li>
+          </ul>
+          <h3 className='h3__keybinds'>Set keybinds <button className='key__binds__button' onClick={() => {setKeyQuas(81); setKeyWex(87); setKeyExort(69); setKeyInvoke(82);}}>Reset</button></h3>
+          <div className='keybinds'>
+            <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyQuas); setBindKeyName('QUAS');}}>QUAS</button>
+            <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyWex); setBindKeyName('WEX');}}>WEX</button>
+            <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyExort); setBindKeyName('EXORT');}}>EXORT</button>
+            <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyInvoke); setBindKeyName('INVOKE');}}>INVOKE</button>
+          </div>
         </div>
+        {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} startGame={startGame} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+        {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+        {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} endGame={endGame}  record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
+        <div className='spells'>
+          <h2>Spells</h2>
+          <ul className='spell__list'>
+            <li><img src={cold_snap} alt="cold_snap"></img><p>Cold Snap - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)}</p></li>
+            <li><img src={ghost_walk} alt="ghost_walk"></img><p>Ghost Walk - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)}</p></li>
+            <li><img src={ice_wall} alt="ice_wall"></img><p>Ice Wall - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyExort)}</p></li>
+            <li><img src={emp} alt="emp"></img><p>EMP - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)}</p></li>
+            <li><img src={tornado} alt="tornado"></img><p>Tornado - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyQuas)}</p></li>
+            <li><img src={alacrity} alt="alacrity"></img><p>Alacrity - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
+            <li><img src={sun_strike} alt="sun_strike"></img><p>Sun Strike - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)}</p></li>
+            <li><img src={forge_spirit} alt="forge_spirit"></img><p>Forge Spirit - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyQuas)}</p></li>
+            <li><img src={chaos_meteor} alt="chaos_meteor"></img><p>Chaos Meteor - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyWex)}</p></li>
+            <li><img src={deafening_blast} alt="deafening_blast"></img><p>Deafening Blast - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
+          </ul>
+        </div>  
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} startGame={startGame} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} endGame={endGame}  record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
-      <div className='spells'>
-        <h2>Spells</h2>
-        <ul className='spell__list'>
-          <li><img src={cold_snap} alt="cold_snap"></img><p>Cold Snap - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)}</p></li>
-          <li><img src={ghost_walk} alt="ghost_walk"></img><p>Ghost Walk - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)}</p></li>
-          <li><img src={ice_wall} alt="ice_wall"></img><p>Ice Wall - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyQuas)} {String.fromCharCode(keyExort)}</p></li>
-          <li><img src={emp} alt="emp"></img><p>EMP - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)}</p></li>
-          <li><img src={tornado} alt="tornado"></img><p>Tornado - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyQuas)}</p></li>
-          <li><img src={alacrity} alt="alacrity"></img><p>Alacrity - {String.fromCharCode(keyWex)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
-          <li><img src={sun_strike} alt="sun_strike"></img><p>Sun Strike - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)}</p></li>
-          <li><img src={forge_spirit} alt="forge_spirit"></img><p>Forge Spirit - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyQuas)}</p></li>
-          <li><img src={chaos_meteor} alt="chaos_meteor"></img><p>Chaos Meteor - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyWex)}</p></li>
-          <li><img src={deafening_blast} alt="deafening_blast"></img><p>Deafening Blast - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
-        </ul>
-      </div>
+      <div className='secondBlock'>
+        <div className='ad'>ad</div>
+        <div className='about'>
+          <h2>About</h2>
+          <p>Hello dear user, I am very glad that you visited my site to improve your skills on the Invoker. 
+            I am a student and this is my first large-scale project. 
+            I would like you to support me and come back to practice your skills on the Invoker. 
+            In return, I am ready to improve and supplement this game in every possible way. 
+            Thanks again for visiting my site, it really motivates me to move on.</p>
+          <h2>Socials</h2>
+          <div className='socials'>
+            <a href="https://twitter.com/iturturika"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="twitter" width='60px' height="60px"></img></a>
+            <a href="https://www.reddit.com/r/InvokerGame?utm_medium=android_app&utm_source=share"><img src="https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png" alt="reddit" width='70px' height="70px"></img></a>
+            <a href="https://vm.tiktok.com/ZMY5Kakc6/"><img src="https://cliply.co/wp-content/uploads/2021/02/372102780_TIKTOK_ICON_1080.png" alt="tiktok" width='90px' height="90px"></img></a>
+            <a href="https://t.me/invokergame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/480px-Telegram_logo.svg.png" alt="tg" width='65px' height="65px"></img></a>
+          </div>
+        </div>  
+        <div className='ad'>ad</div>
+      </div>  
     </div>
 
   );
