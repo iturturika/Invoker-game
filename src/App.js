@@ -59,7 +59,7 @@ const startTimer = () => {
     const timerI = setInterval(function(){
       value = value + 1/60;
       console.log(value);
-      if(updateRef.current === 9){
+      if(updateRef.current > 9){
         setResultGame(value.toFixed(2));
         setGameState("Finished");
         if(value < record){
