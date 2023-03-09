@@ -36,7 +36,7 @@ const StartedGame = (props) => {
           {props.randomSpell === 'chaos meteor' ? <><img src={chaos_meteor} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
           {props.randomSpell === 'deafening blast' ? <><img src={deafening_blast} alt="randomSpell"></img><p>{props.randomSpell}</p></> : null}
         </div>
-        <button className='restart'>Restart</button>
+        <button className='restart' onClick={props.endGame}>Restart</button>
         <ul className='window'>
           <li className='circle'>
             {props.firstCircle === props.keyQuas ? <img src={quas} alt="quas"></img> : undefined}

@@ -28,7 +28,7 @@ const FinishedGame = (props) => {
         {props.resultGame < 7 ? <img src={imortal} alt='ancient'></img> : null}
         <h3>{props.resultGame} seconds</h3>
         <p>{props.resultGame < props.record ? 'New record!' : null}</p>
-        <button className='button'>Restart</button>
+        <button className='button' onClick={props.endGame}>Restart</button>
       </div>
 
 

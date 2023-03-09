@@ -44,21 +44,29 @@ const [keyInvoke, setKeyInvoke] = React.useState(82);
 const [onClickOverlay, setOnClickOverlay] = React.useState(false);
 const [bindKeyName, setBindKeyName] = React.useState('QUAS');
 const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+const updateRef = React.useRef(update);
+React.useEffect(() => {updateRef.current = update}, [update]);
+
+const stopTimer = (timerId) => {
+  clearInterval(timerId);
+  console.log('cleared');
+}
 
 const startTimer = () => {
   let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
-      console.log(update);
-    if(update > 9){
-      setResultGame(value.toFixed(2));
-      if(value < record){
-          setRecord(value);
-      }
-      clearInterval(timerI);
-    }
+      if(updateRef.current === 9){
+        setResultGame(value.toFixed(2));
+        setGameState("Finished");
+        if(value < record){
+            setRecord(value);
+        }
+        stopTimer(timerI);
+      };
     }, 1000/60);
 }
+
 
 const generateSpell = () => {
   let rndIndex = Math.floor(Math.random() * arr.length);
@@ -70,8 +78,8 @@ const generateSpell = () => {
 const verifingSpell = (spell) => {
   if(spell === randomSpell){
     generateSpell();
-    setUpdate(update => update + 1);
-    console.log(spell,arr);
+    
+          setUpdate(update + 1);
   }
 }
 
@@ -158,7 +166,7 @@ const invokeSpell = (key) => {
         setSpell2(spell1);
       }
     }
-
+    
     verifingSpell(spell);
 
   }
@@ -172,16 +180,32 @@ const setCircles = (key) => {
   }
 }
 
+const startGame = () => {
+  setGameState("Started");
+  generateSpell();
+  startTimer();
+}
+
+const endGame = () => {
+  setGameState("Waiting");
+  setSpell1('nospell');
+  setSpell1('nospell');
+  setSpell2('nospell');
+  setFirstCircle('');
+  setSecondCircle('');
+  setThirdCircle('');
+  setUpdate(0);
+  setArr(["cold snap", "ghost walk", "ice wall", "emp", "tornado", "alacrity", "sun strike", "forge spirit", "chaos meteor", "deafening blast"]);
+  console.log("Game waiting");
+}
+
 const changingGameState = (key) => {
   if(key === 13 && gameState === "Waiting"){
-    setGameState("Started");
-    generateSpell();
-    startTimer();
+    startGame();
     console.log("Game started");
   }
   if(key === 13 && (gameState === "Started" || gameState === "Finished")){
-    setGameState("Waiting");
-    console.log("Game waiting");
+    endGame();
   }
 };
 
@@ -231,9 +255,9 @@ return (
           <button className='key__binds__button' onClick={() => {setOnClickOverlay(true); setKeyBinds(setKeyInvoke); setBindKeyName('INVOKE');}}>INVOKE</button>
         </div>
       </div>
-      {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Started' ? <StartedGame setGameState={setGameState} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-      {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
+      {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} startGame={startGame} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+      {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} endGame={endGame}  record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
       <div className='spells'>
         <h2>Spells</h2>
         <ul className='spell__list'>

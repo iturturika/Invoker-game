@@ -13,7 +13,7 @@ const PreviusGameState = (props) => {
      <div className='mainSection'>
         <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
         <img src={invoker1} alt='invoker' className='img'></img>
-        <button className='button' >Start Game</button>
+        <button className='button' onClick={props.startGame}>Start Game</button>
         <ul className='window'>
           <li className='circle'></li>
           <li className='circle'></li>
