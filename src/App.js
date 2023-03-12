@@ -3,7 +3,7 @@ import PreviusGameState from './pages/PreviusGameState/PreviusGameState.js';
 import StartedGame from './pages/StartedGame/StartedGame.js';
 import FinishedGame from './pages/FinishedGame/FinishedGame.js';
 import ReactGA from "react-ga4";
-
+import { Link, Routes, Route } from "react-router-dom";
 
 import './app.scss';
 
@@ -25,6 +25,12 @@ import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
 import { Overlay } from './components/Overlay/Overlay.js';
 import AdsComponent from './components/AdsComponent.js';
+import LoginPage from './pages/LoginPage/LoginPage.js';
+import SigninPage from './pages/SigninPage/SigninPage.js';
+import RecordsPage from './pages/RecordsPage/RecordsPage.js';
+import AproveReg from './pages/AproveReg.js';
+import axios from 'axios';
+import jwt_decode from "jwt-decode";
 function App() {
 ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
@@ -58,12 +64,28 @@ const startTimer = () => {
   let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
-      console.log(value);
       if(updateRef.current > 9){
         setResultGame(value.toFixed(2));
         setGameState("Finished");
-        if(value < record){
-            setRecord(value);
+        if(value < record && updateRef.current > 9){
+            setRecord(value.toFixed(2));
+            if(localStorage.getItem('token')){
+              const decoded = jwt_decode(localStorage.getItem('token'));
+              const id = decoded._id;
+              const nickName = decoded.nickName;
+              axios.patch(process.env.REACT_APP_BE_URI+'/users-records',{
+                "id": id,
+                "nickName": nickName,
+                "record": value
+              },
+              {
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem('token')
+                }
+              })
+              .then((res) => {return res})
+              .catch((err) => {return err})
+            }
         }
         stopTimer(timerI);
       };
@@ -243,8 +265,22 @@ const setKeyBinds = (key) => {
   document.addEventListener('keydown', setKey);
 }
 return (
-
+  <Routes>
+    <Route path='/' element={
     <div className="App">
+      <header className='header'>
+        {
+          localStorage.getItem('token') ? 
+          <div className='buttons_auth'><button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>            <Link to={"/records"}><button>records</button></Link></div>
+          
+          : 
+          <div className='buttons_auth'>
+            <Link to={"/login"}><button>log in</button></Link>
+            <Link to={"/signin"}><button>sign in</button></Link>
+            <Link to={"/records"}><button>records</button></Link>
+          </div>
+        }
+      </header>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
@@ -302,8 +338,14 @@ return (
           </div>
         </div>  
         <div className='ad'><AdsComponent dataAdSlot='8877178049' /></div>
-      </div>  
+      </div>
     </div>
+    }></Route>
+    <Route path='/login' element={<LoginPage/>}></Route>
+    <Route path='/signin'element={<SigninPage/>}></Route>
+    <Route path='/aprove-registration'element={<AproveReg/>}></Route>
+    <Route path='/records'element={<RecordsPage/>}></Route>
+</Routes>
 
   );
 }

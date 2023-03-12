@@ -22,6 +22,31 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+
+}
+.header {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.buttons_auth{
+    button {
+        width: 100px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius:  20px;
+        background-color: #141313;
+        -webkit-border-radius:  20px;
+        -moz-border-radius:  20px;
+        -ms-border-radius:  20px;
+        -o-border-radius:  20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #222020;
+    }
 }
 
 .firstBlock {

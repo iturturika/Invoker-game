@@ -12,7 +12,7 @@ import devine from '../../img/devine.webp';
 import imortal from '../../img/imortal.webp';
 
 const FinishedGame = (props) => {
-
+console.log(props.resultGame, props.record)
   return (
      <div className='mainSection'>
         <h1>Invoker Game by <a href='https://twitter.com/iturturika'>ozzy</a></h1>
@@ -27,7 +27,7 @@ const FinishedGame = (props) => {
         {props.resultGame >= 7 && props.resultGame < 8 ? <img src={devine} alt='devine'></img> : null}
         {props.resultGame < 7 ? <img src={imortal} alt='ancient'></img> : null}
         <h3>{props.resultGame} seconds</h3>
-        <p>{props.resultGame < props.record ? 'New record!' : null}</p>
+        <p>{props.resultGame === props.record ? 'New record!' : null}</p>
         <button className='button' onClick={props.endGame}>Restart</button>
       </div>
 
