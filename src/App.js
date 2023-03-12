@@ -321,7 +321,7 @@ return (
         </div>  
       </div>
       <div className='secondBlock'>
-        <div className='ad'><AdsComponent dataAdSlot='8938200875' /></div>
+        <AdsComponent dataAdSlot='8938200875' />
         <div className='about'>
           <h2>About</h2>
           <p>Hello dear user, I am very glad that you visited my site to improve your skills on the Invoker. 
@@ -337,7 +337,7 @@ return (
             <a href="https://t.me/invokergame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/480px-Telegram_logo.svg.png" alt="tg" width='65px' height="65px"></img></a>
           </div>
         </div>  
-        <div className='ad'><AdsComponent dataAdSlot='8877178049' /></div>
+        <AdsComponent dataAdSlot='8877178049' />
       </div>
     </div>
     }></Route>
