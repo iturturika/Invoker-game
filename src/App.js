@@ -341,10 +341,10 @@ return (
       </div>
     </div>
     }></Route>
-    <Route path='/login' element={<LoginPage/>}></Route>
-    <Route path='/signin'element={<SigninPage/>}></Route>
-    <Route path='/aprove-registration'element={<AproveReg/>}></Route>
-    <Route path='/records'element={<RecordsPage/>}></Route>
+    <Route exact path='/login' element={<LoginPage/>}></Route>
+    <Route exact path='/signin'element={<SigninPage/>}></Route>
+    <Route exact path='/aprove-registration'element={<AproveReg/>}></Route>
+    <Route exact path='/records'element={<RecordsPage/>}></Route>
 </Routes>
 
   );
