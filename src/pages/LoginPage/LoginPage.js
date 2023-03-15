@@ -12,20 +12,19 @@ const LoginPage = () => {
       "email": email,
       "password": password,
       "nickName": nickname    
-  })
-  .then((res) => {
-    setResp(res.status);
-    setTimeout(() => {
-      setResp(false);
-    }, 9000);
-  })
-  .catch((err) =>{
-    setResp(err.response.status);
-    setTimeout(() => {
-      setResp(false);
-    }, 9000);
-  
-  })
+    })
+    .then((res) => {
+      setResp(res.status);
+      setTimeout(() => {
+        setResp(false);
+      }, 9000);
+    })
+    .catch((err) =>{
+      setResp(err.response.status);
+      setTimeout(() => {
+        setResp(false);
+      }, 9000);
+    })
   };
   return (
     <div className="login-form">
