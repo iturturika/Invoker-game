@@ -3,12 +3,13 @@
     src: url('../public/fonts/TrajanPro-Bold.otf'); /* Путь к файлу со шрифтом */
    }
 *{
-    margin: 0;
+    margin: 0 ;
     padding: 0;
     color: #fff;
     box-sizing: border-box;
     font-family: TrajanPro, serif;
     font-weight: 400;
+    
 
 }
 
@@ -21,7 +22,8 @@ body{
 .App {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 
 }
 .header {
