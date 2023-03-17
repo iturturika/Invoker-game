@@ -2,7 +2,6 @@ import React from "react";
 import "./SigninPage.scss";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
 const SigninPage = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -15,21 +14,7 @@ const SigninPage = () => {
     .then((res) => {
       setResp(res.status);
       localStorage.setItem('token', res.data.token);
-      // window.location.replace('https://invoker-game.com');
-      const decoded = jwt_decode(res.data.token);
-      const id = decoded._id;
-      axios.get('http://localhost:4444/users-records/curent',      {
-        id
-      }, {
-        headers: {
-          Authorization: `Bearer ${res.data.token}`
-        }
-      })
-      .then((res) => {console.log(res); localStorage.setItem('record', res.records.record)})
-      .catch((err) => console.log(res));
-      setTimeout(() => {
-        setResp(false);
-      }, 9000);
+      window.location.replace('https://invoker-game.com');
     })
     .catch((err) =>{
       setResp(err.response.status);
