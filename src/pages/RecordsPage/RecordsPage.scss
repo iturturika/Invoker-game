@@ -56,3 +56,18 @@ h2{
         margin-right: 10px;
     }
 }
+
+@media screen and (max-width: 710px) {
+    .records_block {
+        width: 500px;
+    }
+    
+}
+
+
+@media screen and (max-width: 510px) {
+    .records_block {
+        width: 350px;
+    }
+    
+}
