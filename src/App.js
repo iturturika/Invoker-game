@@ -324,11 +324,13 @@ return (
         <div className='ad'><AdsComponent dataAdSlot={8938200875} /></div>
         <div className='about'>
           <h2>About</h2>
-          <p>Hello dear user, I am very glad that you visited my site to improve your skills on the Invoker. 
-            I am a student and this is my first large-scale project. 
-            I would like you to support me and come back to practice your skills on the Invoker. 
-            In return, I am ready to improve and supplement this game in every possible way. 
-            Thanks again for visiting my site, it really motivates me to move on.</p>
+          <p>Invoker is a popular and beloved character in the gaming world, and it's great to see a game that focuses on improving skills with this character. The classic mode of the game, where players must quickly call spells, is a fantastic way to practice and hone your skills. With 10 spells to master, players will need to be quick and accurate in order to achieve the best results.
+
+As the game develops, there will be new modes that will be introduced to further challenge players and test their skills. It's always exciting to see new game modes being added, and it will be interesting to see what other challenges are in store for players.
+
+Registering on the website is also a great idea for those who are serious about playing and want to compete with others. It's important to provide accurate information when registering, as this will ensure that you have access to all of the features of the site. Once registered, players can check out the leaderboard and see how they stack up against others. It's always fun to compete with others, and the leaderboard is a great way to keep track of your progress.
+
+Overall, this game is a fantastic way to improve your skills with Invoker and to challenge yourself to become the best player you can be. With new modes being added and the opportunity to compete with others, it's a great time to get involved and see how you measure up. So, what are you waiting for? Start practicing and become a master of Invoker!</p>
           <h2>Socials</h2>
           <div className='socials'>
             <a href="https://twitter.com/iturturika"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="twitter" width='60px' height="60px"></img></a>
