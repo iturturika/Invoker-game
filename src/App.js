@@ -24,7 +24,6 @@ import forge_spirit from './img/invoker_forge_spirit.png';
 import chaos_meteor from './img/invoker_chaos_meteor.png';
 import deafening_blast from './img/invoker_deafening_blast.png';
 import { Overlay } from './components/Overlay/Overlay.js';
-import AdsComponent from './components/AdsComponent.js';
 import LoginPage from './pages/LoginPage/LoginPage.js';
 import SigninPage from './pages/SigninPage/SigninPage.js';
 import RecordsPage from './pages/RecordsPage/RecordsPage.js';
@@ -318,67 +317,6 @@ return (
             <li><img src={chaos_meteor} alt="chaos_meteor"></img><p>Chaos Meteor - {String.fromCharCode(keyExort)} {String.fromCharCode(keyExort)} {String.fromCharCode(keyWex)}</p></li>
             <li><img src={deafening_blast} alt="deafening_blast"></img><p>Deafening Blast - {String.fromCharCode(keyQuas)} {String.fromCharCode(keyWex)} {String.fromCharCode(keyExort)}</p></li>
           </ul>
-        </div>  
-      </div>
-      <div className='guide-block'>
-      <div className='ad'><AdsComponent dataAdSlot={8938200875} /></div>
-        <div className='guide-block__info'>
-          <h2>Guide</h2>
-          <h3>Introduction</h3>
-          <p>Invoker is a challenging hero to learn and requires significant practice to master due to his flexibility and power. He is typically played in the mid lane to quickly gain levels and gold. To be effective, it's important to focus on leveling two orbs and getting a value point in the third, rather than trying to level all three equally. This specialization allows Invoker to excel in specific areas where his team may need him the most. However, it's also important for Invoker to contribute to team fights before reaching his full potential at level 25. With the right approach and strategy, Invoker can be a formidable force in the game.</p>
-          <div className='guide-block__pros-and-cons'>
-            <div className='guide-block__pros'>
-            <h4 style={{color: "green"}}>Pros</h4>
-            <ul>
-              <li>Extremely versatile.</li>
-              <li>Deadly magic combos.</li>
-              <li>Can push quite well.</li>
-              <li>Good solo killing ability with Quas-Exort.</li>
-            </ul>
-            </div>
-            <div className='guide-block__cons'>
-            <h4 style={{color: "red"}}>Cons</h4>
-            <ul>
-              <li>Steep learning curve.</li>
-              <li>Requires significant early farm to be effective.</li>
-              <li>Not very good at farming compared to other cores.</li>
-              <li>Vulnerable to silence.</li>
-            </ul>
-            </div>
-          </div>
-          <h3>Builds</h3>
-          <p>You can find current builds on sites such as:</p>
-          <a href='https://www.dotabuff.com/heroes/invoker/guides'>Dotabuff</a>
-          <a href='https://stratz.com/heroes/74'>Stratz</a>
-          <h3>Advice</h3>
-          <p>To improve the macro and micro game on the Invoker, I recommend watching the games of professionals or streamers.</p>
-          <h3>Tricks</h3>
-          <p>1. The most important trick on the Invoker is to cast spells without pressing 3 spheres. In the Tornado Emp Meteor Blast combo, I painted the buttons that need to be pressed. There, the blast was not cast by QWE, but simply by Q. And so, let's look at where such tricks can be used.
-            Let's say you don't have an aganim, a refresher. You maxed Exort and are going to cast Tornado Meteor Blast as usual. Personally, I like to put QWE spheres in front of the cast in order to immediately press F + D + R + D. But you need it more in a caste with an aganim. To cast a spell faster and save extra ~0.2-0.5 sec, you can use such blanks + use what I described above. What it should look like: you have Emp and Tornado in your pool. You place EEW spheres. Therefore, to further cast the blast, you only need to press Q. Hence: F + R + F + D + Q + R + D. Or is there another way to cast the same combo without harvesting spheres. Let's say you have WWW spheres to increase the ms and cast EMP later. In the pool you have Meteor and Tornado. To cast a blast, we only need to press QE. Hence: F+R+D+QE+F+R+D. It will be the same Tornado Emp Meteor Blast, but cast in a different way.
-            There are many such tricks, such as Tornado after Emp +Q, Ghost walk after ColdSnap +W, etc.
-          </p>
-          <p>2. A kind of continuation of 1 trick, though this is completely for nerds, well, for example, I use it. The thing is that skills can be cast in any order, like blast not QWE but WQE EWQ and so on. Based on this, we can make a different spell order, add 1 sphere to get the spell we need. For example WQQ - Ghost walk, + Q/E = Snap/IceWall. Useful if you Q+W, go into invisibility from a gank, and see that you can kill someone on the turn. And in order not to spend ~0.5 sec on recasting, not giving the enemy time to react, just E+R+D=IW and finish it off :3 will.</p>
-          <p>3. The main trick of the Q+W invoker is ganks in invisibility. But there is a little trick that allows you to make TPOUT in invisibility. To do this, you need to make a teleport and then press the invis.</p>
-          </div>
-          <div className='ad'><AdsComponent dataAdSlot={8877178049} /></div>
-      </div>
-      <div className='secondBlock'>
-        <div className='about'>
-          <h2>About</h2>
-          <p>Invoker is a popular and beloved character in the gaming world, and it's great to see a game that focuses on improving skills with this character. The classic mode of the game, where players must quickly call spells, is a fantastic way to practice and hone your skills. With 10 spells to master, players will need to be quick and accurate in order to achieve the best results.
-
-As the game develops, there will be new modes that will be introduced to further challenge players and test their skills. It's always exciting to see new game modes being added, and it will be interesting to see what other challenges are in store for players.
-
-Registering on the website is also a great idea for those who are serious about playing and want to compete with others. It's important to provide accurate information when registering, as this will ensure that you have access to all of the features of the site. Once registered, players can check out the leaderboard and see how they stack up against others. It's always fun to compete with others, and the leaderboard is a great way to keep track of your progress.
-
-Overall, this game is a fantastic way to improve your skills with Invoker and to challenge yourself to become the best player you can be. With new modes being added and the opportunity to compete with others, it's a great time to get involved and see how you measure up. So, what are you waiting for? Start practicing and become a master of Invoker!</p>
-          <h2>Socials</h2>
-          <div className='socials'>
-            <a href="https://twitter.com/iturturika"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="twitter" width='60px' height="60px"></img></a>
-            <a href="https://www.reddit.com/r/InvokerGame?utm_medium=android_app&utm_source=share"><img src="https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png" alt="reddit" width='70px' height="70px"></img></a>
-            <a href="https://vm.tiktok.com/ZMY5Kakc6/"><img src="https://cliply.co/wp-content/uploads/2021/02/372102780_TIKTOK_ICON_1080.png" alt="tiktok" width='90px' height="90px"></img></a>
-            <a href="https://t.me/invokergame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/480px-Telegram_logo.svg.png" alt="tg" width='65px' height="65px"></img></a>
-          </div>
         </div>  
       </div>
     </div>
