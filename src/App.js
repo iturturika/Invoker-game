@@ -270,7 +270,12 @@ return (
       <header className='header'>
         {
           localStorage.getItem('token') ? 
-          <div className='buttons_auth'><button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>            <Link to={"/records"}><button>records</button></Link></div>
+          <div className='buttons_auth'>
+            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
+           <div> <button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>      </div>      
+           <Link to={"/records"}><button>records</button></Link>
+           <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
+          </div>
           
           : 
           <div className='buttons_auth'>
