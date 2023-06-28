@@ -12,7 +12,7 @@ import wex from './img/invoker_wex.png';
 import exort from './img/invoker_exort.png';
 import invokeImg from './img/invoker_invoke.png';
 import nospell from './img/no_spell.png';
-
+import ad from './img/ad.jpg';
 import cold_snap from './img/invoker_cold_snap.png';
 import ghost_walk from './img/invoker_ghost_walk.png';
 import ice_wall from './img/invoker_ice_wall.png';
@@ -274,9 +274,11 @@ return (
           
           : 
           <div className='buttons_auth'>
+            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
             <Link to={"/login"}><button>log in</button></Link>
             <Link to={"/signin"}><button>sign in</button></Link>
             <Link to={"/records"}><button>records</button></Link>
+            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
           </div>
         }
       </header>

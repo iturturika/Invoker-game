@@ -34,7 +34,7 @@ body{
 
 .buttons_auth{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 400px;
     button {
         width: 100px;
@@ -402,6 +402,11 @@ body{
     }
     .secondBlock{
         flex-direction: column;
+    }
+    .buttons_auth{
+        img{
+            display: none;
+        }
     }
     .controlls {
         width: 500px;
