@@ -1,0 +1,73 @@
+.records_block{
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    background-color: #141313;
+    -webkit-border-radius:  20px;
+    -moz-border-radius:  20px;
+    -ms-border-radius:  20px;
+    -o-border-radius:  20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding-top: 10px;
+}
+
+.users{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    p{
+        margin-left: auto;
+    }
+
+}
+
+h2{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.home_btn {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius:  20px;
+    background-color: #141313;
+    -webkit-border-radius:  20px;
+    -moz-border-radius:  20px;
+    -ms-border-radius:  20px;
+    -o-border-radius:  20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.home_btn:hover{
+    background-color: #222020;
+}
+
+.login_message{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    a{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .records_block {
+        width: 500px;
+    }
+    
+}
+
+
+@media screen and (max-width: 510px) {
+    .records_block {
+        width: 350px;
+    }
+    
+}

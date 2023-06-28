@@ -1,10 +1,10 @@
 
 
 .mainSection {
-    
-    margin: auto;
     width: 750px;
     height: 750px;
+    margin-left: 30px;
+    margin-right: 30px;
     border-radius:  20px;
     background-color: #141313;
     -webkit-border-radius:  20px;
@@ -15,10 +15,13 @@
         h1{
             text-align: center;
             margin-top: 50px;
+            a{
+                text-decoration: none;
+            }
         }
         img{
             display: block;
-            margin-top: 40px;
+            margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
             
@@ -32,8 +35,8 @@
             font-weight: 700;
             width: 200px;
             height: 50px;
-            background-color: #B24C6B;
-            border: none;
+            background-color: #440b29;
+            border: 2px solid #bd925e;
             border-radius: 20px;
             -webkit-border-radius: 20px;
             -moz-border-radius: 20px;
@@ -58,28 +61,29 @@
                 -moz-border-radius: 100px;
                 -ms-border-radius: 100px;
                 -o-border-radius: 100px;
-                border: 1px solid #ffffffef;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
             }
         }
 }
-
+.button_onClick{
+    transition: 200ms ease-in-out;
+    transform: scale(0.96);
+}
 
 .spells__group{
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
-    border-top: 1px solid #fff;
     .square{
         display: flex;
         margin-top: 30px;
         width: 100px;
         height: 100px;
-        border: 1px solid #ffffffef;
-        padding: 5px;
         span{
             margin-left: 70px;
             position: absolute;
             z-index: 1;
+            font-size: 18px;
             width: 1px;
             height: 1px;
         }
@@ -98,7 +102,6 @@
     margin: 0 auto;
     margin-top: 50px;
     list-style: none;
-    align-items: center;
     img{
         width: 70px;
         
@@ -137,13 +140,12 @@
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 20px;
-        font-size: 15px;
+        font-size: 18px;
         
     }
 }
 
 .controlls {
-    margin: auto;
     padding: 15px;
     width: 300px;
     height: 750px;

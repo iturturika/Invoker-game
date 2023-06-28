@@ -1,35 +1,177 @@
 @font-face {
-    font-family: 'Roboto-Slab';
-    src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-}
-
+    font-family: TrajanPro; /* Гарнитура шрифта */
+    src: url('../public/fonts/TrajanPro-Bold.otf'); /* Путь к файлу со шрифтом */
+   }
 *{
-    margin: 0;
+    margin: 0 ;
     padding: 0;
-    background-color: #141313;
     color: #fff;
-    font-family: Roboto-Slab;
-    font-weight: 400;
     box-sizing: border-box;
+    font-family: TrajanPro, serif;
+    font-weight: 400;
+    
+
 }
 
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//home/radiant_dire5.jpg");
+    background-position: center;
+    overflow-x:hidden;
+}
 
 .App {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 100vh;
-    
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+.header {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.buttons_auth{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    button {
+        width: 100px;
+        height: 30px;
+        border-radius:  20px;
+        background-color: #141313;
+        -webkit-border-radius:  20px;
+        -moz-border-radius:  20px;
+        -ms-border-radius:  20px;
+        -o-border-radius:  20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #222020;
+    }
+}
+
+.firstBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.secondBlock {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 
+.guide-block{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    h2{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    h3{
+        margin: 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+}
 
+.guide-block__info{
+    max-width: 750px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-radius:  20px;
+    background-color: #141313;
+    -webkit-border-radius:  20px;
+    -moz-border-radius:  20px;
+    -ms-border-radius:  20px;
+    -o-border-radius:  20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 30px;
+    a{
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.guide-block__pros-and-cons{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.guide-block__pros{
+    margin-right: 50px;
+}
+
+.about{
+    max-width: 750px;
+    height: 750px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-radius:  20px;
+    background-color: #141313;
+    -webkit-border-radius:  20px;
+    -moz-border-radius:  20px;
+    -ms-border-radius:  20px;
+    -o-border-radius:  20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    h2{
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    p{
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-right: 30px;
+        text-align: justify;
+    }
+    a{  
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-right: 30px;
+        text-align: end;
+        text-decoration: none;
+    }
+
+}
+
+.ad{
+    display: flex;
+    width: 300px;
+    height: 750px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .controll__list{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     list-style: none;
-    align-items: center;
+    font-size: 17px;
     img{
         width: 70px;
         
@@ -68,13 +210,12 @@
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 20px;
-        font-size: 15px;
+        font-size: 18px;
         
     }
 }
 
 .controlls {
-    margin: auto;
     padding: 15px;
     width: 300px;
     height: 750px;
@@ -90,4 +231,392 @@
         }
     
 
+}
+
+.img{
+    width: 300px;
+    height: 170px;
+    margin: 0;
+}
+.h3__keybinds{
+    margin: 0;
+}
+.keybinds{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.key__binds__button{
+    background-color: #141313;
+    border: 3px solid #000;
+    padding: 3px;
+    border-style: groove;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1410px) {
+    .controlls {
+        width: 250px;
+    }
+    .mainSection{
+        width: 500px
+    }
+    .spells {
+        width: 250px;
+        font-size: 16px;
+    }
+    .spells__group{
+        margin-top: 30px;
+        .square{
+            display: flex;
+            margin-top: 30px;
+            width: 80px;
+            height: 80px;
+            border: 5px solid #1d1c1c;
+            border-style: groove;
+            padding: 2px;
+            span{
+                margin-left: 45px;
+                position: absolute;
+                z-index: 1;
+                width: 1px;
+                height: 1px;
+            }
+            img{
+                margin: 0;
+                position: relative;
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    .about{
+        width: 500px;
+        height: 1000px;
+        .socials{
+            margin-left: 30px;
+            margin-right: 30px;
+            a {
+                margin: 0;
+            }
+        }
+    }
+    .ad{
+        width: 250px;
+    }
+    .guide-block__info{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .controlls {
+        width: 200px;
+        .controll__list{
+            li{
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+        .keybinds{
+            flex-wrap: wrap;
+        }
+        .key__binds__button{
+            margin-top: 10px;
+        }
+    }
+    .mainSection{
+        width: 400px;
+        h1{
+            margin-top: 15px;
+            font-size: 30px;
+        }
+        img{
+            margin-top: 50px;
+        }
+    }
+    .spells {
+        width: 200px;
+        font-size: 16px;
+        li{
+            p{
+                font-size: 16px;
+            }
+            margin-bottom: 10px;
+        }
+    }
+    .spells__group{
+        margin-top: 30px;
+        .square{
+            display: flex;
+            margin-top: 30px;
+            width: 60px;
+            height: 60px;
+            border: 5px solid #1d1c1c;
+            border-style: groove;
+            padding: 2px;
+            span{
+                margin-left: 40px;
+                position: absolute;
+                z-index: 1;
+                width: 1px;
+                height: 1px;
+            }
+            img{
+                margin: 0;
+                position: relative;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    .about{
+        width: 400px;
+        height: 1230px;
+        .socials{
+            margin-left: 30px;
+            margin-right: 30px;
+            a {
+                margin: 0;
+            }
+        }
+    }
+    .guide-block__info{
+        width: 400px;
+    }
+    .ad{
+        width: 200px;
+        height: 1230px;
+    }
+}
+
+
+@media screen and (max-width: 870px) {
+    .firstBlock {
+        flex-direction: column;
+    }
+    .secondBlock{
+        flex-direction: column;
+    }
+    .buttons_auth{
+        img{
+            display: none;
+        }
+    }
+    .controlls {
+        width: 500px;
+        height: 650px;
+        margin-bottom: 20px;
+        .controll__list{
+            li{
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+        .keybinds{
+            flex-wrap: wrap;
+        }
+        .key__binds__button{
+            margin-top: 10px;
+        }
+    }
+    .mainSection{
+        width: 500px;
+        height: 700px;
+        h1{
+            margin-top: 15px;
+            font-size: 30px;
+        }
+        img{
+            margin-top: 20px;
+        }
+    }
+    .spells {
+        width: 500px;
+        font-size: 16px;
+        margin-top: 20px;
+        li{
+            p{
+                font-size: 16px;
+            }
+            margin-bottom: 10px;
+        }
+    }
+    .spells__group{
+        margin-top: 30px;
+        .square{
+            display: flex;
+            margin-top: 30px;
+            width: 60px;
+            height: 60px;
+            border: 5px solid #1d1c1c;
+            border-style: groove;
+            padding: 2px;
+            span{
+                margin-left: 40px;
+                position: absolute;
+                z-index: 1;
+                width: 1px;
+                height: 1px;
+            }
+            img{
+                margin: 0;
+                position: relative;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    .about{
+        width: 500px;
+        height: 1000px;
+        margin-left: 10px;
+        margin-right: 10px;
+        .socials{
+            margin-left: 30px;
+            margin-right: 30px;
+            a {
+                margin: 0;
+            }
+        }
+    }
+    .guide-block{
+        flex-direction: column;
+    }
+    .guide-block__info{
+        width: 500px;
+    }
+    .ad{
+        width: 500px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .buttons_auth{
+        width: 300px;
+    }
+    .firstBlock {
+        flex-direction: column;
+    }
+    .secondBlock{
+        flex-direction: column;
+    }
+    .controlls {
+        width: 300px;
+        height: 650px;
+        margin-bottom: 20px;
+        .controll__list{
+            li{
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+        .keybinds{
+            flex-wrap: wrap;
+        }
+        .key__binds__button{
+            margin-top: 10px;
+        }
+    }
+    .mainSection{
+        width: 300px;
+        height: 700px;
+        .window{
+            .circle{
+                width: 60px;
+                height: 60px;
+                img{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+        h1{
+            margin-top: 15px;
+            font-size: 30px;
+        }
+        img{
+            margin-top: 20px;
+        }
+    }
+    .spells {
+        width: 300px;
+        height: 700px;
+        font-size: 16px;
+        margin-top: 20px;
+        li{
+            p{
+                font-size: 16px;
+            }
+            margin-bottom: 10px;
+        }
+    }
+    .spells__group{
+        margin-top: 30px;
+        .square{
+            display: flex;
+            margin-top: 30px;
+            width: 40px;
+            height: 40px;
+            border: 5px solid #1d1c1c;
+            border-style: groove;
+            padding: 2px;
+            span{
+                margin-left: 20px;
+                font-size: 16px;
+                position: absolute;
+                z-index: 1;
+                width: 1px;
+                height: 1px;
+            }
+            img{
+                margin: 0;
+                position: relative;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    .about{
+        width: 300px;
+        height: 1630px;
+        margin-left: 10px;
+        margin-right: 10px;
+        .socials{
+            margin-left: 10px;
+            margin-right: 10px;
+            a {
+                margin: 0;
+            }
+        }
+    }
+    .guide-block__info{
+        width: 300px;
+    }
+    .guide-block__pros-and-cons{
+        flex-direction: column;
+        h4{
+            margin-top: 20px;
+        }
+    }
+    .ad{
+        width: 300px;
+        height: 300px;
+    }
 }
