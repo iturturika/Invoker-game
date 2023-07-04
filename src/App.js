@@ -147,7 +147,7 @@ const invokeSpell = (key) => {
       }
     }
 
-    if(spell === `${keyWex}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyWex}` || spell === `${keyWex}${keyQuas}${keyQuas}`){
+    if(spell === `${keyWex}${keyWex}${keyQuas}` || spell === `${keyWex}${keyQuas}${keyWex}` || spell === `${keyQuas}${keyWex}${keyWex}`){
       setSpell1(`tornado`);
       spell = `tornado`;
       if(spell1 !== `tornado`){
@@ -155,7 +155,7 @@ const invokeSpell = (key) => {
       }
     }
 
-    if(spell === `${keyWex}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyWex}` || spell === `${keyExort}${keyQuas}${keyQuas}`){
+    if(spell === `${keyWex}${keyWex}${keyExort}` || spell === `${keyWex}${keyExort}${keyWex}` || spell === `${keyExort}${keyWex}${keyWex}`){
       setSpell1(`alacrity`);
       spell = `alacrity`;
       if(spell1 !== `alacrity`){
