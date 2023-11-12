@@ -12,7 +12,7 @@ import wex from './img/invoker_wex.png';
 import exort from './img/invoker_exort.png';
 import invokeImg from './img/invoker_invoke.png';
 import nospell from './img/no_spell.png';
-import ad from './img/ad.jpg';
+import ad from './img/ad.png';
 import cold_snap from './img/invoker_cold_snap.png';
 import ghost_walk from './img/invoker_ghost_walk.png';
 import ice_wall from './img/invoker_ice_wall.png';
