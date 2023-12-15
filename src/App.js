@@ -271,10 +271,12 @@ return (
         {
           localStorage.getItem('token') ? 
           <div className='buttons_auth'>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
+            {/* <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link> */}
+            <div class="qgkKrq345777"></div>
            <div> <button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>      </div>      
            <Link to={"/records"}><button>records</button></Link>
-           <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
+           {/* <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link> */}
+           <div class="rNDZnY345778"></div>
           </div>
           
           : 
