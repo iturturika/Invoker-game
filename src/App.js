@@ -281,11 +281,11 @@ return (
           
           : 
           <div className='buttons_auth'>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
+             <div class="qgkKrq345777"></div>
             <Link to={"/login"}><button>log in</button></Link>
             <Link to={"/signin"}><button>sign in</button></Link>
             <Link to={"/records"}><button>records</button></Link>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
+            <div class="rNDZnY345778"></div>
           </div>
         }
       </header>
