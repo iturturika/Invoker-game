@@ -289,7 +289,7 @@ return (
           </div>
         }
       </header>
-      <div class="TBNdAD345777"></div>
+      <div style={{display: 'flex', width: '100%', height: '100px', justifyContent: 'center', alignItems: 'center'}}><div class="TBNdAD345777"></div></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
@@ -329,7 +329,9 @@ return (
           </ul>
         </div>  
       </div>
-      <div class="ATsZQn345778"></div>
+      <div style={{display: 'flex', width: '100%', height: '100px', justifyContent: 'center', alignItems: 'center'}}><div class="ATsZQn345778"></div></div>
+
+
     </div>
     }></Route>
     <Route exact path='/login' element={<LoginPage/>}></Route>
