@@ -281,14 +281,15 @@ return (
           
           : 
           <div className='buttons_auth'>
-             <div><div class="TBNdAD345777"></div></div>
+            
             <Link to={"/login"}><button>log in</button></Link>
             <Link to={"/signin"}><button>sign in</button></Link>
             <Link to={"/records"}><button>records</button></Link>
-            <div><div class="ATsZQn345778"></div></div>
+           
           </div>
         }
       </header>
+      <div class="TBNdAD345777"></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
@@ -328,6 +329,7 @@ return (
           </ul>
         </div>  
       </div>
+      <div class="ATsZQn345778"></div>
     </div>
     }></Route>
     <Route exact path='/login' element={<LoginPage/>}></Route>
