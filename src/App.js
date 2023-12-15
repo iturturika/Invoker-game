@@ -267,7 +267,7 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-      <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}><div class="GzkhHA345777" style={{height: '100px'}}></div></div>
+      <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}><div class="GzkhHA345777"></div></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
