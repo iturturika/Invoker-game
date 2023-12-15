@@ -267,29 +267,7 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-      <header className='header'>
-        {
-          localStorage.getItem('token') ? 
-          <div className='buttons_auth'>
-            {/* <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link> */}
-            <div><div class="TBNdAD345777"></div></div>
-           <div> <button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>      </div>      
-           <Link to={"/records"}><button>records</button></Link>
-           {/* <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link> */}
-            <div><div class="ATsZQn345778"></div></div>
-          </div>
-          
-          : 
-          <div className='buttons_auth'>
-            
-            <Link to={"/login"}><button>log in</button></Link>
-            <Link to={"/signin"}><button>sign in</button></Link>
-            <Link to={"/records"}><button>records</button></Link>
-           
-          </div>
-        }
-      </header>
-      <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}><div class="TBNdAD345777"></div></div>
+      <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}><div class="GzkhHA345777" style={{height: '100px'}}></div></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
@@ -329,9 +307,6 @@ return (
           </ul>
         </div>  
       </div>
-      <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}><div class="ATsZQn345778"></div></div>
-
-
     </div>
     }></Route>
     <Route exact path='/login' element={<LoginPage/>}></Route>
