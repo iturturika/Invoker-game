@@ -3,7 +3,7 @@ import PreviusGameState from './pages/PreviusGameState/PreviusGameState.js';
 import StartedGame from './pages/StartedGame/StartedGame.js';
 import FinishedGame from './pages/FinishedGame/FinishedGame.js';
 import ReactGA from "react-ga4";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import './app.scss';
 
@@ -12,7 +12,6 @@ import wex from './img/invoker_wex.png';
 import exort from './img/invoker_exort.png';
 import invokeImg from './img/invoker_invoke.png';
 import nospell from './img/no_spell.png';
-import ad from './img/ad.png';
 import cold_snap from './img/invoker_cold_snap.png';
 import ghost_walk from './img/invoker_ghost_walk.png';
 import ice_wall from './img/invoker_ice_wall.png';
@@ -52,6 +51,7 @@ const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "em
 const [stop, setStop] = React.useState(false);
 const updateRef = React.useRef(update);
 const stopRef = React.useRef(stop);
+React.useEffect(() => {document.cookie = "cookie-name=value; SameSite=None; Secure"}, []);
 React.useEffect(() => {updateRef.current = update}, [update]);
 React.useEffect(() => {stopRef.current = stop}, [stop]);
 const stopTimer = (timerId) => {
