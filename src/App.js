@@ -51,7 +51,7 @@ const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "em
 const [stop, setStop] = React.useState(false);
 const updateRef = React.useRef(update);
 const stopRef = React.useRef(stop);
-React.useEffect(() => {document.cookie = "cookie-name=value; SameSite=None; Secure"}, []);
+
 React.useEffect(() => {updateRef.current = update}, [update]);
 React.useEffect(() => {stopRef.current = stop}, [stop]);
 const stopTimer = (timerId) => {
