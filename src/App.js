@@ -267,7 +267,7 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-      <div class="aGRdAF345777" style={{margin: '0 auto'}}></div>
+
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
