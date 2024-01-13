@@ -267,8 +267,7 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-          
-  <div class={process.env.REACT_APP_BLOCK_ID} style={{margin: '0 auto'}}></div>
+  <div class="QdAFfa346323" style={{margin: '0 auto'}}></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
