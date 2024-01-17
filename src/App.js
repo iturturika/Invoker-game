@@ -58,33 +58,35 @@ const stopTimer = (timerId) => {
   clearInterval(timerId);
   console.log('cleared');
 }
+const [valueTimer, setValueTimer] = React.useState(0);
 
 const startTimer = () => {
   let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
+      setValueTimer(value.toFixed(2));
       if(updateRef.current > 9){
         setResultGame(value.toFixed(2));
         setGameState("Finished");
         if(value < record && updateRef.current > 9){
             setRecord(value.toFixed(2));
-            if(localStorage.getItem('token')){
-              const decoded = jwt_decode(localStorage.getItem('token'));
-              const id = decoded._id;
-              const nickName = decoded.nickName;
-              axios.patch(process.env.REACT_APP_BE_URI+'/users-records',{
-                "id": id,
-                "nickName": nickName,
-                "record": value
-              },
-              {
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem('token')
-                }
-              })
-              .then((res) => {return res})
-              .catch((err) => {return err})
-            }
+            // if(localStorage.getItem('token')){
+            //   const decoded = jwt_decode(localStorage.getItem('token'));
+            //   const id = decoded._id;
+            //   const nickName = decoded.nickName;
+            //   axios.patch(process.env.REACT_APP_BE_URI+'/users-records',{
+            //     "id": id,
+            //     "nickName": nickName,
+            //     "record": value
+            //   },
+            //   {
+            //     headers: {
+            //         "Authorization": "Bearer " + localStorage.getItem('token')
+            //     }
+            //   })
+            //   .then((res) => {return res})
+            //   .catch((err) => {return err})
+            // }
         }
         stopTimer(timerI);
       };
@@ -289,7 +291,7 @@ return (
           </div>
         </div>
         {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} startGame={startGame} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-        {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+        {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate} valueTimer={valueTimer} /> : null}
         {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} endGame={endGame}  record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
         <div className='spells'>
           <h2>Spells</h2>
