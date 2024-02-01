@@ -270,6 +270,14 @@ return (
     <Route path='/' element={
     <div className="App">
   <div class="nQAQTa348174" style={{margin: '0 auto'}}></div>
+  <div>
+    {
+      aclib.runBanner({
+        zoneId: '8039086',
+      })
+    }
+  </div>
+
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
