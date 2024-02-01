@@ -27,8 +27,7 @@ import LoginPage from './pages/LoginPage/LoginPage.js';
 import SigninPage from './pages/SigninPage/SigninPage.js';
 import RecordsPage from './pages/RecordsPage/RecordsPage.js';
 import AproveReg from './pages/AproveReg.js';
-import axios from 'axios';
-import jwt_decode from "jwt-decode";
+
 function App() {
 ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
@@ -270,13 +269,6 @@ return (
     <Route path='/' element={
     <div className="App">
   <div class="nQAQTa348174" style={{margin: '0 auto'}}></div>
-  <div>
-    {
-      aclib.runBanner({
-        zoneId: '8039086',
-      })
-    }
-  </div>
 
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
