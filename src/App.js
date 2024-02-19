@@ -268,7 +268,7 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-    <div style={{margin: '0 auto'}}><ins class="tfxads" data-tfx-id="25264" data-tfx-w="728" data-tfx-h="90"></ins><script src="https://cdn.adlook.me/js/ads.js" async="async"></script></div>
+    <div style={{margin: '0 auto'}}><div class="ZbbRbY348640"></div></div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
