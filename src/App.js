@@ -241,7 +241,6 @@ const changingGameState = (key) => {
 };
 
 const handleKeyClick = (event) => {
-    console.log(event.keyCode);
     changingGameState(event.keyCode);
     setCircles(event.keyCode);
     invokeSpell(event.keyCode);
@@ -268,7 +267,8 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-    <div style={{margin: '0 auto'}}><div class="ZbbRbY348640"></div></div>
+    <div style={{margin: '0 auto'}}><div className={process.env.REACT_APP_BLOCK_ID}></div>
+    </div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
