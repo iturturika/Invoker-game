@@ -3,7 +3,7 @@ import PreviusGameState from './pages/PreviusGameState/PreviusGameState.js';
 import StartedGame from './pages/StartedGame/StartedGame.js';
 import FinishedGame from './pages/FinishedGame/FinishedGame.js';
 import ReactGA from "react-ga4";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import './app.scss';
 
@@ -267,7 +267,9 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-    <div style={{margin: '0 auto'}}><div className={process.env.REACT_APP_BLOCK_ID}></div>
+    <div style={{margin: '0 auto', textAlign: 'center'}}>
+    <p>Я хочу услышать от вас мнение по рекламе какая для вас меннее раздражающая. Ответить можете тут: <Link to={'https://t.me/invokergame'}>Telegram</Link></p>
+    <p>I want to hear your opinion on which advertisement is less annoying for you. You can answer here: <Link to={'https://t.me/invokergame'}>Telegram</Link></p>
     </div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
