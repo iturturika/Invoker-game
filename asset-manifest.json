@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a2726121.css",
-    "main.js": "/static/js/main.d0054d93.js",
+    "main.js": "/static/js/main.5bab0bb4.js",
     "static/media/invoker1.gif": "/static/media/invoker1.d869abaf521e85197572.gif",
     "static/media/TrajanPro-Bold.otf": "/static/media/TrajanPro-Bold.3f14e0ffe7b54e407289.otf",
     "static/media/invoker_exort.png": "/static/media/invoker_exort.a56f53208bb284a9d01c.png",
@@ -13,17 +13,17 @@
     "static/media/ancient.webp": "/static/media/ancient.cbf1437eb0de9ec6047f.webp",
     "static/media/legend.webp": "/static/media/legend.87a840c4f5a8e830e56a.webp",
     "static/media/devine.webp": "/static/media/devine.acac8965958ba840c642.webp",
-    "static/media/elements.svg": "/static/media/elements.4fc35d0f1c42d7c6e9bed2f170add2e8.svg",
+    "static/media/elements.svg": "/static/media/elements.e43efc6ab3a01d1d7e55aef470306214.svg",
     "static/media/archon.webp": "/static/media/archon.d291e2134f20f691f800.webp",
     "static/media/crusader.webp": "/static/media/crusader.707a339ff622127788f2.webp",
     "static/media/guardian.webp": "/static/media/guardian.1712854f7cca82353105.webp",
     "static/media/herald.webp": "/static/media/herald.15bc75d20f22bae51050.webp",
     "index.html": "/index.html",
     "main.a2726121.css.map": "/static/css/main.a2726121.css.map",
-    "main.d0054d93.js.map": "/static/js/main.d0054d93.js.map"
+    "main.5bab0bb4.js.map": "/static/js/main.5bab0bb4.js.map"
   },
   "entrypoints": [
     "static/css/main.a2726121.css",
-    "static/js/main.d0054d93.js"
+    "static/js/main.5bab0bb4.js"
   ]
 }
