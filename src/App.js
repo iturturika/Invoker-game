@@ -3,7 +3,7 @@ import PreviusGameState from './pages/PreviusGameState/PreviusGameState.js';
 import StartedGame from './pages/StartedGame/StartedGame.js';
 import FinishedGame from './pages/FinishedGame/FinishedGame.js';
 import ReactGA from "react-ga4";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import './app.scss';
 
@@ -12,7 +12,6 @@ import wex from './img/invoker_wex.png';
 import exort from './img/invoker_exort.png';
 import invokeImg from './img/invoker_invoke.png';
 import nospell from './img/no_spell.png';
-import ad from './img/ad.png';
 import cold_snap from './img/invoker_cold_snap.png';
 import ghost_walk from './img/invoker_ghost_walk.png';
 import ice_wall from './img/invoker_ice_wall.png';
@@ -28,8 +27,7 @@ import LoginPage from './pages/LoginPage/LoginPage.js';
 import SigninPage from './pages/SigninPage/SigninPage.js';
 import RecordsPage from './pages/RecordsPage/RecordsPage.js';
 import AproveReg from './pages/AproveReg.js';
-import axios from 'axios';
-import jwt_decode from "jwt-decode";
+
 function App() {
 ReactGA.initialize("G-26SK3D39ZL");
 const [gameState, setGameState] = React.useState('Waiting');
@@ -52,39 +50,42 @@ const [arr, setArr] = React.useState(["cold snap", "ghost walk", "ice wall", "em
 const [stop, setStop] = React.useState(false);
 const updateRef = React.useRef(update);
 const stopRef = React.useRef(stop);
+
 React.useEffect(() => {updateRef.current = update}, [update]);
 React.useEffect(() => {stopRef.current = stop}, [stop]);
 const stopTimer = (timerId) => {
   clearInterval(timerId);
   console.log('cleared');
 }
+const [valueTimer, setValueTimer] = React.useState(0);
 
 const startTimer = () => {
   let value = 0;
     const timerI = setInterval(function(){
       value = value + 1/60;
+      setValueTimer(value.toFixed(2));
       if(updateRef.current > 9){
         setResultGame(value.toFixed(2));
         setGameState("Finished");
         if(value < record && updateRef.current > 9){
             setRecord(value.toFixed(2));
-            if(localStorage.getItem('token')){
-              const decoded = jwt_decode(localStorage.getItem('token'));
-              const id = decoded._id;
-              const nickName = decoded.nickName;
-              axios.patch(process.env.REACT_APP_BE_URI+'/users-records',{
-                "id": id,
-                "nickName": nickName,
-                "record": value
-              },
-              {
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem('token')
-                }
-              })
-              .then((res) => {return res})
-              .catch((err) => {return err})
-            }
+            // if(localStorage.getItem('token')){
+            //   const decoded = jwt_decode(localStorage.getItem('token'));
+            //   const id = decoded._id;
+            //   const nickName = decoded.nickName;
+            //   axios.patch(process.env.REACT_APP_BE_URI+'/users-records',{
+            //     "id": id,
+            //     "nickName": nickName,
+            //     "record": value
+            //   },
+            //   {
+            //     headers: {
+            //         "Authorization": "Bearer " + localStorage.getItem('token')
+            //     }
+            //   })
+            //   .then((res) => {return res})
+            //   .catch((err) => {return err})
+            // }
         }
         stopTimer(timerI);
       };
@@ -240,7 +241,6 @@ const changingGameState = (key) => {
 };
 
 const handleKeyClick = (event) => {
-    console.log(event.keyCode);
     changingGameState(event.keyCode);
     setCircles(event.keyCode);
     invokeSpell(event.keyCode);
@@ -267,26 +267,9 @@ return (
   <Routes>
     <Route path='/' element={
     <div className="App">
-      <header className='header'>
-        {
-          localStorage.getItem('token') ? 
-          <div className='buttons_auth'>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
-           <div> <button onClick={() => {localStorage.removeItem("token"); window.location.replace("/")}}>Exit</button>      </div>      
-           <Link to={"/records"}><button>records</button></Link>
-           <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
-          </div>
-          
-          : 
-          <div className='buttons_auth'>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{height: 80}} alt='ad'></img></Link>
-            <Link to={"/login"}><button>log in</button></Link>
-            <Link to={"/signin"}><button>sign in</button></Link>
-            <Link to={"/records"}><button>records</button></Link>
-            <Link to={'https://instagram.com/kinetic.store.md?igshid=NGExMmI2YTkyZg=='}><img src={ad} style={{ height: 80}} alt='ad'></img></Link>
-          </div>
-        }
-      </header>
+    <div style={{margin: '0 auto', textAlign: 'center'}}>
+    <div class="ZtEKFG348816"></div>     
+    </div>
       <div className="firstBlock">
         { onClickOverlay ? <Overlay keyName={bindKeyName}/> : null}
         <div className='controlls'>
@@ -308,7 +291,7 @@ return (
           </div>
         </div>
         {gameState === 'Waiting' ? <PreviusGameState gameState={gameState} startGame={startGame} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} setGameState={setGameState} record={record} setRecord={setRecord} randomSpell={randomSpell} setResultGame={setResultGame} setRandomSpell={setRandomSpell} spell1={spell1} spell2={spell2} setSpell1={setSpell1} setSpell2={setSpell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
-        {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate}/> : null}
+        {gameState === 'Started' ? <StartedGame setGameState={setGameState} endGame={endGame} keyQuas={keyQuas} keyWex={keyWex} keyExort={keyExort} keyInvoke={keyInvoke} randomSpell={randomSpell} spell1={spell1} spell2={spell2} firstCircle={firstCircle} setFirstCircle={setFirstCircle} secondCircle={secondCircle} setSecondCircle={setSecondCircle} thirdCircle={thirdCircle} setThirdCircle={setThirdCircle} update={update} setUpdate={setUpdate} valueTimer={valueTimer} /> : null}
         {gameState === 'Finished' ? <FinishedGame setGameState={setGameState} endGame={endGame}  record={record} setRecord={setRecord} resultGame={resultGame}/> : null}
         <div className='spells'>
           <h2>Spells</h2>
